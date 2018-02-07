@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="480.0" layoutY="474.0" mnemonicParsing="false" text="Rechercher " />
+      <Label layoutX="108.0" layoutY="478.0" prefHeight="17.0" prefWidth="185.0" text="Veuillez choisir une catégorie :" />
+      <ComboBox layoutX="293.0" layoutY="474.0" prefWidth="150.0" promptText="Nom des catégories" />
+      <Button layoutX="261.0" layoutY="390.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="168.0" text="Afficher la liste des conseils" />
+      <Button layoutX="572.0" layoutY="390.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="111.0" text="Supprimer conseil" />
+      <Button layoutX="450.0" layoutY="390.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Ajouter conseil " />
+      <TableView layoutX="108.0" layoutY="86.0" prefHeight="270.0" prefWidth="705.0">
+         <columns>
+            <TableColumn prefWidth="72.0" text="Id conseil " />
+            <TableColumn prefWidth="117.0" text="Catégorie" />
+            <TableColumn prefWidth="141.0" text="Nom propriétaire" />
+            <TableColumn prefWidth="374.0" text="Description" />
+         </columns>
+      </TableView>
+      <Button layoutX="702.0" layoutY="390.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="111.0" text="Modifier conseil" />
+      <ComboBox layoutX="293.0" layoutY="515.0" prefWidth="150.0" promptText="Nom" />
+      <Label layoutX="108.0" layoutY="519.0" prefHeight="17.0" prefWidth="185.0" text="Veuillez choisir un nom :" />
+      <Button layoutX="480.0" layoutY="515.0" mnemonicParsing="false" text="Rechercher " />
+   </children>
+</AnchorPane>

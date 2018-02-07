@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextArea layoutX="148.0" layoutY="124.0" prefHeight="115.0" prefWidth="169.0" />
+      <ChoiceBox layoutX="148.0" layoutY="85.0" prefHeight="25.0" prefWidth="169.0" />
+      <Button layoutX="148.0" layoutY="254.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="169.0" text="Ajouter " />
+      <Label layoutX="59.0" layoutY="123.0" text="Description : " />
+      <Label layoutX="59.0" layoutY="89.0" text="Catégorie : " />
+      <Label layoutX="139.0" prefHeight="72.0" prefWidth="188.0" text="Ajout d'un conseil " textFill="#a43197">
+         <font>
+            <Font name="Cambria" size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
