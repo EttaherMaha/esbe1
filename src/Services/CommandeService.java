@@ -19,7 +19,7 @@ public class CommandeService implements ICommande{
     Connection conn ;
 
     public CommandeService() {
-        this.conn = MyDB.getInstance().getConnexion();
+        this.conn = MyDB.getinstance().getConnexion();
     }
 
     @Override

@@ -13,11 +13,11 @@ public class Parapharmacie {
     
     private int id_para;
     private int livraison;
-    private int id_etab;
 
-    public Parapharmacie(int livraison, int id_etab) {
+
+    public Parapharmacie(int livraison) {
         this.livraison = livraison;
-        this.id_etab = id_etab;
+
     }
 
     public int getId_para() {
@@ -36,17 +36,10 @@ public class Parapharmacie {
         this.livraison = livraison;
     }
 
-    public int getId_etab() {
-        return id_etab;
-    }
-
-    public void setId_etab(int id_etab) {
-        this.id_etab = id_etab;
-    }
 
     @Override
     public String toString() {
-        return "Parapharmacie{" + "id_para=" + id_para + ", livraison=" + livraison + ", id_etab=" + id_etab + '}';
+        return "Parapharmacie{" + "id_para=" + id_para + ", livraison=" + livraison + '}';
     }
 
  

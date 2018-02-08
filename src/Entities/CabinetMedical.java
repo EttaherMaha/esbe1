@@ -12,7 +12,7 @@ package Entities;
 public class CabinetMedical {
     private int id_cabinet;
     private int cnam;
-    private int id_etab;
+
     
      public CabinetMedical( int cnam) {
 
@@ -40,19 +40,14 @@ public class CabinetMedical {
         this.cnam = cnam;
     }
 
-    public int getId_etab() {
-        return id_etab;
-    }
-
-    public void setId_etab(int id_etab) {
-        this.id_etab = id_etab;
-    }
-
     @Override
     public String toString() {
-        return "CabinetMedical{" + "id_cabinet=" + id_cabinet + ", cnam=" + cnam + ", id_etab=" + id_etab + '}';
+        return "CabinetMedical{" + "id_cabinet=" + id_cabinet + ", cnam=" + cnam + '}';
     }
 
+
+
+   
 
     
     

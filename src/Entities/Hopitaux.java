@@ -15,13 +15,13 @@ public class Hopitaux {
     private String type;
     private int urgence;
     private int cnam;
-    private int id_etab;
 
-    public Hopitaux(String type, int urgence, int cnam, int id_etab) {
+
+    public Hopitaux(String type, int urgence, int cnam) {
         this.type = type;
         this.urgence = urgence;
         this.cnam = cnam;
-        this.id_etab = id_etab;
+ 
     }
 
     public int getId_hopital() {
@@ -56,17 +56,11 @@ public class Hopitaux {
         this.cnam = cnam;
     }
 
-    public int getId_etab() {
-        return id_etab;
-    }
 
-    public void setId_etab(int id_etab) {
-        this.id_etab = id_etab;
-    }
 
     @Override
     public String toString() {
-        return "Hopitaux{" + "id_hopital=" + id_hopital + ", type=" + type + ", urgence=" + urgence + ", cnam=" + cnam + ", id_etab=" + id_etab + '}';
+        return "Hopitaux{" + "id_hopital=" + id_hopital + ", type=" + type + ", urgence=" + urgence + ", cnam=" + cnam + '}';
     }
     
     
