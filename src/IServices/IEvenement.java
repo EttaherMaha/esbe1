@@ -23,4 +23,5 @@ public interface IEvenement
     public List<Evenement> chercherEvenementParCategorie(String nomCategorie); 
     public List<Evenement> chercherEvenementParNomUtilisateur(String nomUti);   
     public List<Evenement> chercherEvenementParDate(LocalDate date); 
+    public void supprimmerEvenement(LocalDate date);
 }

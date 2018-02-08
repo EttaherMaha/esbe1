@@ -63,7 +63,7 @@ public class EvenementService implements IEvenement
         try {
             Statement stl = conn.createStatement();
             stl.executeUpdate(sql);
-            System.out.println("Delete Categorie Done");
+            System.out.println("Delete EvenementDone");
             } 
         catch (SQLException ex) 
             {
@@ -83,7 +83,7 @@ public class EvenementService implements IEvenement
         {
             Statement stl = conn.createStatement();
             stl.executeUpdate(sql);
-            System.out.println("Update Conseil done");
+            System.out.println("Update Evenement done");
         } 
         catch (SQLException ex) 
         {
@@ -95,97 +95,27 @@ public class EvenementService implements IEvenement
     @Override
     public List<Evenement> afficherEvenements()
     {
-         List<Evenement> ListEvents=new ArrayList <Evenement>();
-        
-        ResultSet rs;
-        String sql ="select * from evenements";
-        try 
-        {
-            Statement stl = conn.createStatement();
-            rs=stl.executeQuery(sql);          
-            System.out.println("Affichage Done");
-            while(rs.next())
-            {
-                Timestamp input = rs.getTimestamp("date_debut");
-                
-                Timestamp input2 = rs.getTimestamp("date_fin");
-                LocalDate date = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                LocalDate date2 = input2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-              
-                
-                LocalDateTime newD = rs.getTimestamp("date_debut").toLocalDateTime();
-                LocalDateTime newG = rs.getTimestamp("date_fin").toLocalDateTime();
-                
-                java.util.Date ddd = new java.util.Date();
-                java.sql.Date ddd2= new java.sql.Date(input.getTime());
-                
-                Evenement event = new Evenement();
-                event.setId_event(rs.getInt("id_event"));
-                
-                event.setDate_debut(date);
-                event.setDate_fin(date2);
-                event.setHoraire_com(rs.getString("horaire_com"));
-                event.setHoraire_fin(rs.getString("horaire_fin"));
-                event.setDescription(rs.getString("description"));
-                event.setImage(rs.getString("image"));
-                event.setId_categorie(rs.getInt("id_categorie"));
-                event.setId_user(rs.getInt("id_user"));
-                
-               Evenement event2 = new Evenement(date,date2,rs.getString("horaire_com"),rs.getString("horaire_fin"),rs.getString("description"),rs.getString("image"),rs.getInt("id_categorie"),rs.getInt("id_user"));
-                
-                ListEvents.add(event2);
-                System.out.println(event2.toString());                
-            }
-        } 
-        catch (SQLException ex) 
-            
-        {
-            System.out.println("SQLException: " + ex.getMessage());
-            System.out.println("SQLState: " + ex.getSQLState());
-            System.out.println("VendorError: " + ex.getErrorCode());
-        }
-        
-       return ListEvents ;
-        
-    }
-
-    @Override
-    public List<Evenement> chercherEvenementParCategorie(String nomCategorie)
-    {
-        List<Evenement> ListEvent=new ArrayList <Evenement>();              
+List<Evenement> ListEvent=new ArrayList <Evenement>();              
        ResultSet rs;
-        
-        String sql ="select id_categorie from categorie where nom='"+nomCategorie+"';";
-
         try 
         {
-            Statement stl = conn.createStatement();
-            rs=stl.executeQuery(sql);    
-            rs.next();
-            int idcateg= rs.getInt("id_categorie");
-            System.out.println(idcateg);
-            String sql2="SELECT  * from evenements INNER JOIN categorie on evenements.id_categorie ="+idcateg+";";
+            String sql2="SELECT  * from evenements";
             Statement st2 = conn.createStatement();
             ResultSet  rs2=st2.executeQuery(sql2);       
             System.out.println("Affichage Done");
             
             while(rs2.next())
-            {
+            {                
+                Evenement event = new Evenement();
                 Timestamp input = rs2.getTimestamp("date_debut");              
                 Timestamp input2 = rs2.getTimestamp("date_fin");
                 LocalDate date = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
                 LocalDate date2 = input2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-              
-                
                 LocalDateTime newD = rs2.getTimestamp("date_debut").toLocalDateTime();
                 LocalDateTime newG = rs2.getTimestamp("date_fin").toLocalDateTime();
-                
                 java.util.Date ddd = new java.util.Date();
                 java.sql.Date ddd2= new java.sql.Date(input.getTime());
-                
-                Evenement event = new Evenement();
                 event.setId_event(rs2.getInt("id_event"));
-                
                 event.setDate_debut(date);
                 event.setDate_fin(date2);
                 event.setHoraire_com(rs2.getString("horaire_com"));
@@ -194,11 +124,59 @@ public class EvenementService implements IEvenement
                 event.setImage(rs2.getString("image"));
                 event.setId_categorie(rs2.getInt("id_categorie"));
                 event.setId_user(rs2.getInt("id_user"));
-                
-               Evenement event2 = new Evenement(date,date2,rs2.getString("horaire_com"),rs2.getString("horaire_fin"),rs2.getString("description"),rs2.getString("image"),rs2.getInt("id_categorie"),rs2.getInt("id_user"));
-                
-                ListEvent.add(event2);
-                System.out.println(event2.toString());                             
+
+                ListEvent.add(event);
+                System.out.println(event.toString());                             
+            }
+        } 
+        
+        catch (SQLException ex) 
+            
+        {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        
+        return ListEvent;
+        
+    }
+
+    @Override
+    public List<Evenement> chercherEvenementParCategorie(String nomCategorie)
+    {
+       List<Evenement> ListEvent=new ArrayList <Evenement>();              
+       ResultSet rs;
+        try 
+        {
+            String sql2="SELECT  * from evenements INNER JOIN categorie c on evenements.id_categorie = c.id_categorie where c.nom = '"+nomCategorie+"';";
+            Statement st2 = conn.createStatement();
+            ResultSet  rs2=st2.executeQuery(sql2);       
+            System.out.println("Affichage Done");
+            
+            while(rs2.next())
+            {                
+                Evenement event = new Evenement();
+                Timestamp input = rs2.getTimestamp("date_debut");              
+                Timestamp input2 = rs2.getTimestamp("date_fin");
+                LocalDate date = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                LocalDate date2 = input2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                LocalDateTime newD = rs2.getTimestamp("date_debut").toLocalDateTime();
+                LocalDateTime newG = rs2.getTimestamp("date_fin").toLocalDateTime();
+                java.util.Date ddd = new java.util.Date();
+                java.sql.Date ddd2= new java.sql.Date(input.getTime());
+                event.setId_event(rs2.getInt("id_event"));
+                event.setDate_debut(date);
+                event.setDate_fin(date2);
+                event.setHoraire_com(rs2.getString("horaire_com"));
+                event.setHoraire_fin(rs2.getString("horaire_fin"));
+                event.setDescription(rs2.getString("description"));
+                event.setImage(rs2.getString("image"));
+                event.setId_categorie(rs2.getInt("id_categorie"));
+                event.setId_user(rs2.getInt("id_user"));
+
+                ListEvent.add(event);
+                System.out.println(event.toString());                             
             }
         } 
         
@@ -218,38 +196,27 @@ public class EvenementService implements IEvenement
     @Override
     public List<Evenement> chercherEvenementParNomUtilisateur(String nomUti)
     {
-        List<Evenement> ListEvent=new ArrayList <Evenement>();              
-        ResultSet rs;
-        String sql ="select id from fos_user where username = '"+nomUti+"';";
-
+     List<Evenement> ListEvent=new ArrayList <Evenement>();              
+       ResultSet rs;
         try 
         {
-            Statement stl = conn.createStatement();
-            rs=stl.executeQuery(sql);    
-            rs.next();
-            int idUti= rs.getInt("id");
-            System.out.println(idUti);
-            String sql2="select * from evenements where id_user ="+idUti+";";
+            String sql2="SELECT  * from evenements INNER JOIN fos_user u on evenements.id_user = u.id where u.username = '"+nomUti+"';";
             Statement st2 = conn.createStatement();
             ResultSet  rs2=st2.executeQuery(sql2);       
             System.out.println("Affichage Done");
+            
             while(rs2.next())
-            {
+            {                
+                Evenement event = new Evenement();
                 Timestamp input = rs2.getTimestamp("date_debut");              
                 Timestamp input2 = rs2.getTimestamp("date_fin");
                 LocalDate date = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
                 LocalDate date2 = input2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-              
-                
                 LocalDateTime newD = rs2.getTimestamp("date_debut").toLocalDateTime();
                 LocalDateTime newG = rs2.getTimestamp("date_fin").toLocalDateTime();
-                
                 java.util.Date ddd = new java.util.Date();
                 java.sql.Date ddd2= new java.sql.Date(input.getTime());
-                
-                Evenement event = new Evenement();
                 event.setId_event(rs2.getInt("id_event"));
-                
                 event.setDate_debut(date);
                 event.setDate_fin(date2);
                 event.setHoraire_com(rs2.getString("horaire_com"));
@@ -258,13 +225,12 @@ public class EvenementService implements IEvenement
                 event.setImage(rs2.getString("image"));
                 event.setId_categorie(rs2.getInt("id_categorie"));
                 event.setId_user(rs2.getInt("id_user"));
-                
-               Evenement event2 = new Evenement(date,date2,rs2.getString("horaire_com"),rs2.getString("horaire_fin"),rs2.getString("description"),rs2.getString("image"),rs2.getInt("id_categorie"),rs2.getInt("id_user"));
-                
-                ListEvent.add(event2);
-                System.out.println(event2.toString());                             
+
+                ListEvent.add(event);
+                System.out.println(event.toString());                             
             }
         } 
+        
         catch (SQLException ex) 
             
         {
@@ -273,7 +239,7 @@ public class EvenementService implements IEvenement
             System.out.println("VendorError: " + ex.getErrorCode());
         }
         
-        return ListEvent;
+        return ListEvent;   
         
     }
 
@@ -329,5 +295,28 @@ public class EvenementService implements IEvenement
         return ListEvent;
         
     }    
+
+    @Override
+    public void supprimmerEvenement(LocalDate date) 
+    {
+                   String sql ="DELETE FROM evenements WHERE date_debut = '"+date+"';";
+                   System.out.println(sql);
+        try {
+            Statement stl = conn.createStatement();
+            int k = stl.executeUpdate(sql);
+            if (k > 0) {
+                System.out.println("Delete evenement Done");
+            }
+            
+            
+            } 
+        catch (SQLException ex) 
+            {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+            }
+        
+    }
 
 }

@@ -35,21 +35,18 @@ public class TestEvenement
 //        Date date = new Date();
          
          */
-         
-
-
         LocalDate d = LocalDate.parse( "2015-09-02" );
         LocalDate d1 = LocalDate.parse( "2016-02-04" );
-
+        LocalDate d2 = LocalDate.parse("2018-02-07");
         System.out.println(d);
         System.out.println(d1);
   
        // Date dd = new Date(115, 05, 20);
-        
-        
-        Evenement event1=new Evenement(d,d1,"9h","30min","Promo salle de sport","image",67,1);
-        
-         EvenementService cs= new EvenementService();
+
+        Evenement event1=new Evenement(d2,d1,"9h","30min","Promo salle de sport","image",67,1);
+        Evenement event2=new Evenement(d1,d2,"9h","30min","Jdidaaa","image",66,1);
+
+        EvenementService cs= new EvenementService();
          
         //TEST AJOUT!//
          
@@ -58,27 +55,32 @@ public class TestEvenement
          
          // TEST SUPRESSION!
          
-         //event1.setId_event(3);
-         //cs.supprimerEvenement(event1);
+         event1.setId_event(5);
+         cs.supprimerEvenement(event1);
          
          //TEST AFFICHAGE!
+         System.out.println("******Affichage************");
+
          cs.afficherEvenements();
+         
          System.out.println("******promo************");
-        //cs.chercherEvenementParCategorie("Promo");
+         cs.chercherEvenementParCategorie("Promo");
        
           //System.out.println("******************");
           //cs.chercherEvenementParNomUtilisateur("maha");
           
           //CHERCHER PAR DATE 
-          //cs.chercherEvenementParDate(d);
+          cs.chercherEvenementParDate(d);
           event1.setId_event(4);
           
           //MODIF
-          cs.modifierEvenement(event1);
-          System.out.println("********************");
-          cs.chercherEvenementParCategorie("yeux");
-          System.out.println(" //////////////// ");
-          cs.chercherEvenementParNomUtilisateur("rania");
+        //  cs.modifierEvenement(event1);
+          System.out.println("**********Utilisateur*********");
+        
+        //   System.out.println(" //////////////// ");
+        cs.chercherEvenementParNomUtilisateur("maha");
+        //  System.out.println("*************************");
+        //  cs.supprimmerEvenement(d2);
         
           
           
