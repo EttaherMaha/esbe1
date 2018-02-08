@@ -7,6 +7,7 @@ package IServices;
 
 import Entities.Evenement;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -21,5 +22,5 @@ public interface IEvenement
     public List<Evenement>afficherEvenements();
     public List<Evenement> chercherEvenementParCategorie(String nomCategorie); 
     public List<Evenement> chercherEvenementParNomUtilisateur(String nomUti);   
-    public List<Evenement> chercherEvenementParDate(Date date); 
+    public List<Evenement> chercherEvenementParDate(LocalDate date); 
 }

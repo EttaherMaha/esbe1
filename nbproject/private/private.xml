@@ -3,23 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/IServices/IConseil.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/DataStorage/MyDB.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Entities/Conseil.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/IServices/IEvenement.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/IServices/ICategorie.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Services/CategorieService.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Services/EvenementService.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Services/CommentaireService.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Entities/Categorie.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Entities/Evenement.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/esbe/TestEvenement.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/esbe/TestCommentaire.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/IServices/ICommentaire.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Services/ConseilService.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Entities/Commentaire.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/esbe/Esbe.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Entities/Commentaire.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Services/CommentaireService.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/esbe/TestConseil.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Entities/Categorie.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/esbe/TestEvenement.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Entities/Conseil.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Services/CategorieService.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Entities/Demande.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Services/EvenementService.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Entities/Evenement.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Services/ConseilService.java</file>
         </group>
     </open-files>
 </project-private>
