@@ -7,6 +7,7 @@ package IServices;
 
 import Entities.Commande;
 import Entities.Produit;
+import java.util.List;
 
 /**
  *
@@ -16,7 +17,7 @@ public interface ICommande {
     public void passCommande(Commande c); // product contains in one etab 
     public void addProductToCommande(Produit p);
     public void annulerCommande(int id_commande);
-    public void showMyCommande(int id_user);
-    public void showCommandebyEtab(int id_etab);
+    public List<Commande> showMyCommande(int id_user);
+    public List<Commande> showCommandebyid(int id_commande);
 
 }

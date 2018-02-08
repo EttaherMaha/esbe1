@@ -12,15 +12,18 @@ package Entities;
 public class Commande {
     private int id_produit ;
     private int id_user ;
-    private int id_etab ;
+    private int id_commande ;
     
     
     
     /******* Constructor ****/
-    public Commande(int id_produit, int id_user, int id_etab) {
+    public Commande(int id_produit, int id_user, int id_commande) {
         this.id_produit = id_produit;
         this.id_user = id_user;
-        this.id_etab = id_etab;
+        this.id_commande = id_commande;
+    }
+
+    public Commande() {
     }
 
     
@@ -43,12 +46,12 @@ public class Commande {
         this.id_user = id_user;
     }
 
-    public int getId_etab() {
-        return id_etab;
+    public int getId_commande() {
+        return id_commande;
     }
 
-    public void setId_etab(int id_etab) {
-        this.id_etab = id_etab;
+    public void setId_commande(int id_commande) {
+        this.id_commande= id_commande;
     }
     
        /**
@@ -57,7 +60,7 @@ public class Commande {
 
     @Override
     public String toString() {
-        return "Commande{" + "id_produit=" + id_produit + ", id_user=" + id_user + ", id_etab=" + id_etab + '}';
+        return "Commande{" + "id_produit=" + id_produit + ", id_user=" + id_user + ", id_etab=" + id_commande + '}';
     }
     
     

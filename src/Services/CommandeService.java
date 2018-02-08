@@ -9,42 +9,125 @@ import DataStorage.MyDB;
 import IServices.ICommande;
 import Entities.Commande;
 import Entities.Produit;
+import Entities.RendezVous;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author elbrh
  */
 public class CommandeService implements ICommande{
-    Connection conn ;
+    Connection connexion ;
 
     public CommandeService() {
-        this.conn = MyDB.getinstance().getConnexion();
+        this.connexion = MyDB.getinstance().getConnexion();
+
+
     }
 
     @Override
     public void passCommande(Commande c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {   
+            String query = "INSERT INTO commande ( id_produit, id_user )"
+                    + "values ( '" + c.getId_produit() + "', '" + c.getId_user() + "' );";
+            Statement state = connexion.createStatement();
+            state.executeUpdate(query);
+            System.out.println("Ajout effectué");
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+
+        }
     }
 
     @Override
     public void addProductToCommande(Produit p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            List<Produit> lsp=new ArrayList<Produit>();
+            
+            
     }
 
     @Override
     public void annulerCommande(int id_commande) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            
+            Statement state = connexion.createStatement();
+            state.executeUpdate("DELETE from commande where id_commande='" + id_commande + "'");
+            System.out.println("supression effectuée");
+        } catch (SQLException ex) {
+            System.out.println("supression echouee");
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+
+        }
     }
 
     @Override
-    public void showMyCommande(int id_user) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Commande> showMyCommande(int id_user) {
+        List<Commande> lscom = new ArrayList<>();
+        try {
+            Statement state = connexion.createStatement();
+            ResultSet rs = state.executeQuery("select * from commande");
+
+            while (rs.next()) {
+                
+                Commande com = new Commande();
+                com.setId_produit(rs.getInt("id_produit"));
+                com.setId_user(rs.getInt("id_user"));
+                com.setId_commande(rs.getInt("id_commande"));
+
+                lscom.add(com);
+                System.out.println(com);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Affichage echoué");
+        }
+        return lscom;
     }
 
     @Override
-    public void showCommandebyEtab(int id_etab) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Commande> showCommandebyid(int id_commande) {
+            List<Commande> lscom = new ArrayList<>();
+        try {
+            String sql = "select * from commande where id_commande='" + id_commande + "';";
+            
+            Statement state = connexion.createStatement();
+            ResultSet rs = state.executeQuery(sql);
+            
+
+            while (rs.next()) {
+               
+                Commande com = new Commande();
+                com.setId_commande(rs.getInt("id_rdv"));
+                
+                com.setId_user(rs.getInt("id_user"));
+                com.setId_produit(rs.getInt("id_produit"));
+                com.setId_commande(rs.getInt("id_commande"));
+
+               
+
+                lscom.add(com);
+                
+                    System.out.println(com);
+                
+            }
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+
+        return lscom;
+    }
     }
 
  
@@ -55,4 +138,4 @@ public class CommandeService implements ICommande{
     
     
     
-}
+
