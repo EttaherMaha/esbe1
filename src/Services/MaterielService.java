@@ -26,7 +26,7 @@ public class MaterielService implements IServices.IMateriel{
     
 
     public MaterielService() {
-        this.conn = MyDB.getInstance().getConnexion();
+        this.conn = MyDB.getinstance().getConnexion();
     }
     
     

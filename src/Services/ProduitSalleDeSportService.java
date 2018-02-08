@@ -27,7 +27,7 @@ public class ProduitSalleDeSportService implements IProduitSalleDeSport{
     Connection conn ;
 
     public ProduitSalleDeSportService() {
-        this.conn = MyDB.getInstance().getConnexion();
+        this.conn = MyDB.getinstance().getConnexion();
     }
 
     @Override

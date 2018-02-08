@@ -7,12 +7,7 @@ package Services;
 import DataStorage.MyDB;
 import IServices.IProduitHerbo;
 import Utils.CategorieProduitHerbo;
-import Utils.Forme;
-import Utils.ModeAdministration;
-import Utils.PourQui;
-import Entities.Materiel;
 import Entities.ProduitHerbo;
-import Entities.ProduitPharmaceutique;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -29,7 +24,7 @@ public class ProduitHerboService implements IProduitHerbo {
     Connection conn ;
 
     public ProduitHerboService() {
-        this.conn = MyDB.getInstance().getConnexion();
+        this.conn = MyDB.getinstance().getConnexion();
     }
     @Override
     public void addProduit(ProduitHerbo p) {

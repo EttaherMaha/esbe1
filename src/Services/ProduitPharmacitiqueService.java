@@ -30,7 +30,7 @@ public class ProduitPharmacitiqueService implements IProduitPharmacie{
     Connection conn ;
 
     public ProduitPharmacitiqueService() {
-        this.conn = MyDB.getInstance().getConnexion();
+        this.conn = MyDB.getinstance().getConnexion();
     }
 
     @Override

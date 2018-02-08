@@ -26,7 +26,7 @@ public class ServiceService implements IServices.IService{
     Connection conn ;
 
     public ServiceService() {
-        this.conn = MyDB.getInstance().getConnexion();
+        this.conn = MyDB.getinstance().getConnexion();
     }
     
     

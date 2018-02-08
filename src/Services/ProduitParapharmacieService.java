@@ -27,7 +27,7 @@ public class ProduitParapharmacieService implements IProduitPara{
     Connection conn ;
 
     public ProduitParapharmacieService() {
-        this.conn = MyDB.getInstance().getConnexion();
+        this.conn = MyDB.getinstance().getConnexion();
     }
 
     @Override
