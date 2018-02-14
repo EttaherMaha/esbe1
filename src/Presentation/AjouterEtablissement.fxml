@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="ap" prefHeight="700.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterEtablissementController">
+   <children>
+      <Label layoutX="68.0" layoutY="45.0" text="Nom" />
+      <Label layoutX="68.0" layoutY="82.0" text="adresse" />
+      <Label layoutX="68.0" layoutY="161.0" text="date_fermeture" />
+      <Label layoutX="68.0" layoutY="124.0" text="date_ouverture" />
+      <Label layoutX="69.0" layoutY="279.0" text="fax" />
+      <Label layoutX="69.0" layoutY="316.0" text="page_facebook" />
+      <Label layoutX="69.0" layoutY="237.0" text="numero" />
+      <Label layoutX="69.0" layoutY="200.0" text="email" />
+      <Label layoutX="69.0" layoutY="389.0" text="heure_ouverture" />
+      <Label layoutX="69.0" layoutY="426.0" text="heure_fermeture" />
+      <Label layoutX="69.0" layoutY="468.0" text="image" />
+      <Label layoutX="68.0" layoutY="350.0" text="site_web" />
+      <TextField fx:id="txtNom" layoutX="250.0" layoutY="41.0" />
+      <TextField fx:id="txtAdresse" layoutX="250.0" layoutY="78.0" />
+      <TextField fx:id="txtDF" layoutX="250.0" layoutY="161.0" />
+      <TextField fx:id="txtDO" layoutX="250.0" layoutY="124.0" />
+      <TextField fx:id="txtEmail" layoutX="250.0" layoutY="200.0" />
+      <TextField fx:id="txtNum" layoutX="250.0" layoutY="237.0" />
+      <TextField fx:id="txtFax" layoutX="250.0" layoutY="271.0" />
+      <TextField fx:id="txtFB" layoutX="250.0" layoutY="308.0" />
+      <TextField fx:id="txtSW" layoutX="250.0" layoutY="344.0" />
+      <TextField fx:id="txtHO" layoutX="250.0" layoutY="381.0" />
+      <TextField fx:id="txtHF" layoutX="250.0" layoutY="426.0" />
+      <TextField fx:id="txtImage" layoutX="250.0" layoutY="464.0" />
+      <Button fx:id="btnValider" layoutX="224.0" layoutY="661.0" mnemonicParsing="false" onAction="#CreerEtab" text="Valider" />
+      <Label layoutX="68.0" layoutY="502.0" text="Type Etablissement" />
+      <ComboBox fx:id="combo" layoutX="250.0" layoutY="498.0" onAction="#typeEtab" prefWidth="150.0" />
+      <Label fx:id="label1" layoutX="68.0" layoutY="541.0" />
+      <CheckBox fx:id="checkbox1" layoutX="250.0" layoutY="550.0" mnemonicParsing="false" text="CheckBox" />
+      <ComboBox fx:id="combobox1" layoutX="248.0" layoutY="546.0" prefWidth="150.0" />
+      <ComboBox fx:id="combobox2" layoutX="248.0" layoutY="586.0" prefWidth="150.0" />
+      <CheckBox fx:id="checkbox2" layoutX="250.0" layoutY="590.0" mnemonicParsing="false" text="CheckBox" />
+      <Label fx:id="label2" layoutX="63.0" layoutY="590.0" />
+      <Label fx:id="label3" layoutX="63.0" layoutY="633.0" />
+      <CheckBox fx:id="checkbox3" layoutX="250.0" layoutY="625.0" mnemonicParsing="false" text="CheckBox" />
+      <ComboBox fx:id="combobox3" layoutX="248.0" layoutY="621.0" prefWidth="150.0" />
+      <TextField fx:id="txt2" layoutX="249.0" layoutY="586.0" />
+   </children>
+</AnchorPane>

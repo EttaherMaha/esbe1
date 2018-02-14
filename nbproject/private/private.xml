@@ -3,18 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/esbe/Esbe.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Entities/Commentaire.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Services/CommentaireService.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/esbe/TestConseil.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Entities/Categorie.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/esbe/TestEvenement.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Entities/Conseil.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Services/CategorieService.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Entities/Demande.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Services/EvenementService.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Entities/Evenement.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/esbe/src/Services/ConseilService.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Controllers/AjouterEtablissementController.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Controllers/EtablissementController.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/esbe/EtablissementTest.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/Etablissement.fxml</file>
         </group>
     </open-files>
 </project-private>

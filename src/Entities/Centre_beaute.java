@@ -9,7 +9,7 @@ package Entities;
  *
  * @author Ellouze Skander
  */
-public class Centre_beaute {
+public class Centre_beaute extends Etablissement {
     private int id_centre;
     private String image;
 

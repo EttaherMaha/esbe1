@@ -34,9 +34,9 @@ public class HopitauxService implements IHopitaux{
     public void ajouterHopitaux(Hopitaux c, Etablissement e) {
      try {
 
-               String query1 = "INSERT INTO Etablissements (nom, adresse, date_ouverture, date_fermeture, email, numero,fax,page_facebook,site_web,heure_ouverture,heure_fermeture,id_user) "
-                    + "values ( '"+e.getNom()+"','"+e.getAdresse()+"','"+e.getDate_ouverture()+"','"+e.getDate_fermeture()+"','"+e.getEmail()+"',"+e.getNum()+","+e.getFax()+",'"+e.getPage_fb()+"','"+e.getSite_web()+"','"+e.getHeure_ouverture()+"','"+e.getHeure_fermeture()+"',1 );";
-            PreparedStatement stl= connexion.prepareStatement(query1, Statement.RETURN_GENERATED_KEYS);
+          String query1 = "INSERT INTO Etablissements (nom, adresse, date_ouverture, date_fermeture, email, numero,fax,page_facebook,site_web,heure_ouverture,heure_fermeture,image,id_user) "
+                    + "values ( '"+e.getNom()+"','"+e.getAdresse()+"','"+e.getDate_ouverture()+"','"+e.getDate_fermeture()+"','"+e.getEmail()+"',"+e.getNum()+","+e.getFax()+",'"+e.getPage_fb()+"','"+e.getSite_web()+"','"+e.getHeure_ouverture()+"','"+e.getHeure_fermeture()+"','"+e.getImage()+"',1 );";
+               PreparedStatement stl= connexion.prepareStatement(query1, Statement.RETURN_GENERATED_KEYS);
             stl.executeUpdate();
               ResultSet  generatedKeys = stl.getGeneratedKeys();
               generatedKeys.next();
@@ -74,11 +74,14 @@ public class HopitauxService implements IHopitaux{
     }
 
     @Override
-    public void modifierHopitaux(Hopitaux c) {
-      String sql ="UPDATE hopitaux SET type ='"+c.getType()+"','"+c.getUrgence()+"','"+c.getCnam()+"' WHERE id_hopital ='"+ c.getId_hopital()+"';";
+    public void modifierHopitaux(Hopitaux c,Etablissement e) {
+      String sql ="UPDATE hopitaux SET type ='"+c.getType()+"','"+c.getUrgence()+"','"+c.getCnam()+"' WHERE id_hopital ="+ c.getId_hopital()+";";
+       String sql2="UPDATE etablissements SET nom='"+e.getNom()+"',adresse='"+e.getAdresse()+"',date_ouverture='"+e.getDate_ouverture()+"',date_fermeture='"+e.getDate_fermeture()+"',email='"+e.getEmail()+"',numero="+e.getNum()+",fax="+e.getFax()+",page_facebook='"+e.getPage_fb()+"',site_web='"+e.getPage_fb()+"',heure_ouverture="+e.getHeure_ouverture()+",heure_fermeture="+e.getHeure_fermeture()+",image='"+e.getImage()+"' where id="+ c.getId_hopital()+";";
         try {
+            Statement st2=connexion.createStatement();
             Statement stl = connexion.createStatement();
             stl.executeUpdate(sql);
+            st2.executeUpdate(sql2);
             System.out.println("Update done");
         } catch (SQLException ex) {
            System.out.println("SQLException: " + ex.getMessage());

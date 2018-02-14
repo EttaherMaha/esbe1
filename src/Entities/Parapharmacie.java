@@ -9,7 +9,7 @@ package Entities;
  *
  * @author Ellouze Skander
  */
-public class Parapharmacie {
+public class Parapharmacie extends Etablissement {
     
     private int id_para;
     private int livraison;
@@ -18,6 +18,9 @@ public class Parapharmacie {
     public Parapharmacie(int livraison) {
         this.livraison = livraison;
 
+    }
+
+    public Parapharmacie() {
     }
 
     public int getId_para() {

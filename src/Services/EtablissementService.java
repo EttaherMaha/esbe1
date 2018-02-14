@@ -21,6 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -29,6 +31,7 @@ import java.util.logging.Logger;
 public class EtablissementService implements IEtablissement {
 
     Connection connexion;
+    private ObservableList<Etablissement> data;
    
     public EtablissementService() {
         connexion = MyDB.getinstance().getConnexion();
@@ -37,7 +40,8 @@ public class EtablissementService implements IEtablissement {
     
    
     @Override
-    public List<Etablissement> chercherEtablissementParNom(String nom) {
+    public ObservableList<Etablissement> chercherEtablissementParNom(String nom) {
+        data = FXCollections.observableArrayList();
         List<Etablissement> ListEtablissement=new ArrayList <Etablissement>();              
         ResultSet rs;
         String sql ="select * from etablissements where nom='"+nom+"';";
@@ -61,11 +65,11 @@ public class EtablissementService implements IEtablissement {
                 e.setFax(rs2.getInt("fax"));
                 e.setPage_fb(rs2.getString("page_facebook"));
                 e.setSite_web(rs2.getString("site_web"));
-                e.setHeure_ouverture(rs2.getTimestamp("heure_ouverture"));
-                e.setHeure_fermeture(rs2.getTimestamp("heure_fermeture"));
+                e.setHeure_ouverture(rs2.getInt("heure_ouverture"));
+                e.setHeure_fermeture(rs2.getInt("heure_fermeture"));
                 e.setIdUser(rs2.getInt(1));
 
-                ListEtablissement.add(e);
+                data.add(e);
                 System.out.println(e);               
             }
         } 
@@ -78,7 +82,7 @@ public class EtablissementService implements IEtablissement {
             System.out.println("VendorError: " + ex.getErrorCode());
         }
         
-        return ListEtablissement;
+        return data;
         
     }
 
@@ -107,8 +111,8 @@ public class EtablissementService implements IEtablissement {
                 e.setFax(rs2.getInt("fax"));
                 e.setPage_fb(rs2.getString("page_facebook"));
                 e.setSite_web(rs2.getString("site_web"));
-                e.setHeure_ouverture(rs2.getTimestamp("heure_ouverture"));
-                e.setHeure_fermeture(rs2.getTimestamp("heure_fermeture"));
+                e.setHeure_ouverture(rs2.getInt("heure_ouverture"));
+                e.setHeure_fermeture(rs2.getInt("heure_fermeture"));
                 e.setIdUser(rs2.getInt(1));
 
                 ListEtablissement.add(e);
@@ -149,8 +153,8 @@ public class EtablissementService implements IEtablissement {
                 e.setFax(rs2.getInt("fax"));
                 e.setPage_fb(rs2.getString("page_facebook"));
                 e.setSite_web(rs2.getString("site_web"));
-                e.setHeure_ouverture(rs2.getTimestamp("heure_ouverture"));
-                e.setHeure_fermeture(rs2.getTimestamp("heure_fermeture"));
+                e.setHeure_ouverture(rs2.getInt("heure_ouverture"));
+                e.setHeure_fermeture(rs2.getInt("heure_fermeture"));
                 e.setIdUser(rs2.getInt(1));
 
                 ListEtablissement.add(e);
@@ -162,4 +166,41 @@ public class EtablissementService implements IEtablissement {
     
             return ListEtablissement;
 }
+        public void ajouterEtablissement(Etablissement e) {
+        
+         try {
+             
+            String query1 = "INSERT INTO Etablissements (nom, adresse, date_ouverture, date_fermeture, email, numero,fax,page_facebook,site_web,heure_ouverture,heure_fermeture,image,id_user) "
+                    + "values ( '"+e.getNom()+"','"+e.getAdresse()+"','"+e.getDate_ouverture()+"','"+e.getDate_fermeture()+"','"+e.getEmail()+"',"+e.getNum()+","+e.getFax()+",'"+e.getPage_fb()+"','"+e.getSite_web()+"','"+e.getHeure_ouverture()+"','"+e.getHeure_fermeture()+"','"+e.getImage()+"',1 );";
+            Statement stm1= connexion.createStatement();
+            stm1.executeUpdate(query1);
+            System.out.println("Ajout effectué");
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+         }
+        
+        
+        
+         @Override
+    public void supprimerEtablissement(Etablissement e) 
+    {
+        String sql ="DELETE FROM Etablissements WHERE id= "+e.getId()+";";
+        try 
+        {
+            Statement stl = connexion.createStatement();
+            stl.executeUpdate(sql);
+            System.out.println("Delete Etablissement Done");
+        } 
+        catch (SQLException ex) 
+        {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+
+    }
+        
+        
+
 }

@@ -16,6 +16,7 @@ public class Etablissement {
     
     private int id;
     private String nom;
+    private String image;
     private String adresse;
     private String date_ouverture;
     private String date_fermeture;
@@ -24,15 +25,15 @@ public class Etablissement {
     private int fax;
     private String page_fb;
     private String site_web;
-    private Timestamp heure_ouverture;
-    private Timestamp heure_fermeture;
+    private int heure_ouverture;
+    private int heure_fermeture;
     private int idUser;
     
     public Etablissement() 
     {
     }
 
-    public Etablissement(String nom, String adresse, String  date_ouverture, String date_fermeture, String email, int num, int fax, String page_fb, String site_web, Timestamp heure_ouverture, Timestamp heure_fermeture,int idUser) 
+    public Etablissement(String nom, String adresse, String  date_ouverture, String date_fermeture, String email, int num, int fax, String page_fb, String site_web, int heure_ouverture, int heure_fermeture,String image,int idUser) 
     {
 
         this.nom = nom;
@@ -46,7 +47,16 @@ public class Etablissement {
         this.site_web = site_web;
         this.heure_ouverture = heure_ouverture;
         this.heure_fermeture = heure_fermeture;
+        this.image=image;
         this.idUser=idUser;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
    
@@ -102,12 +112,12 @@ public class Etablissement {
         return site_web;
     }
 
-    public Timestamp getHeure_ouverture()
+    public int getHeure_ouverture()
     {
         return heure_ouverture;
     }
 
-    public Timestamp getHeure_fermeture() 
+    public int getHeure_fermeture() 
     {
         return heure_fermeture;
     }
@@ -162,12 +172,12 @@ public class Etablissement {
         this.site_web = site_web;
     }
 
-    public void setHeure_ouverture(Timestamp heure_ouverture)
+    public void setHeure_ouverture(int heure_ouverture)
     {
         this.heure_ouverture = heure_ouverture;
     }
 
-    public void setHeure_fermeture(Timestamp heure_fermeture)
+    public void setHeure_fermeture(int heure_fermeture)
     {
         this.heure_fermeture = heure_fermeture;
     }

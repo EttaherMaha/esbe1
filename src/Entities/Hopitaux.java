@@ -9,7 +9,7 @@ package Entities;
  *
  * @author Ellouze Skander
  */
-public class Hopitaux {
+public class Hopitaux extends Etablissement {
     
     private int id_hopital;
     private String type;
@@ -22,6 +22,9 @@ public class Hopitaux {
         this.urgence = urgence;
         this.cnam = cnam;
  
+    }
+
+    public Hopitaux() {
     }
 
     public int getId_hopital() {

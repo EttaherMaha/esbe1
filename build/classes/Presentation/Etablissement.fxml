@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EtablissementController">
+   <children>
+      <Label layoutX="126.0" layoutY="548.0" text="Veuillez entrer le nom de l'etablissement que vous voudrez chercher : " />
+      <TextField fx:id="txtRecherche" layoutX="503.0" layoutY="544.0" prefHeight="25.0" prefWidth="218.0" promptText="Nom établissement" />
+      <Button fx:id="ChercherButton" layoutX="737.0" layoutY="544.0" mnemonicParsing="false" onAction="#chercher" prefHeight="25.0" prefWidth="108.0" text="Chercher" />
+      <Button fx:id="SupprimerButton" layoutX="683.0" layoutY="460.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="34.0" prefWidth="108.0" text="Supprimer" />
+      <Button fx:id="ModifierButton" layoutX="808.0" layoutY="460.0" mnemonicParsing="false" onAction="#Smodif" prefHeight="34.0" prefWidth="108.0" text="Modifier" />
+      <Button fx:id="AjouterButton" layoutX="558.0" layoutY="460.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="34.0" prefWidth="108.0" text="Ajouter" />
+      <TableView fx:id="TableEtab" layoutX="61.0" layoutY="139.0" onMouseClicked="#rr" prefHeight="291.0" prefWidth="1179.0">
+         <columns>
+            <TableColumn fx:id="Id" prefWidth="50.0" text="Id " />
+            <TableColumn fx:id="Nom" prefWidth="54.0" text="Nom etablissement" />
+            <TableColumn fx:id="Date_ouverture" prefWidth="91.0" text="Date ouverture" />
+            <TableColumn fx:id="Date_fermeture" prefWidth="101.0" text="Date fermeture" />
+            <TableColumn fx:id="Email" prefWidth="103.0" text="Email" />
+            <TableColumn fx:id="Num" prefWidth="85.0" text="Numéro" />
+            <TableColumn fx:id="Fax" prefWidth="83.0" text="Fax" />
+            <TableColumn fx:id="Page_fb" prefWidth="124.0" text="Page facebook" />
+            <TableColumn fx:id="Site_web" prefWidth="158.0" text="Site web" />
+            <TableColumn fx:id="Heure_ouverture" prefWidth="106.0" text="Heure ouverture" />
+            <TableColumn fx:id="Heure_fermeture" prefWidth="100.0" text="Heure fermeture" />
+            <TableColumn fx:id="Adresse" minWidth="0.0" prefWidth="139.0" text="Adresse" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

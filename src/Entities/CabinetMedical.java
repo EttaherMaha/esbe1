@@ -9,7 +9,7 @@ package Entities;
  *
  * @author Ellouze Skander
  */
-public class CabinetMedical {
+public class CabinetMedical extends Etablissement {
     private int id_cabinet;
     private int cnam;
 
@@ -21,7 +21,6 @@ public class CabinetMedical {
     }
 
     public CabinetMedical() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public int getId_cabinet() {

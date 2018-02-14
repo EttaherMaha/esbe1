@@ -9,16 +9,19 @@ package Entities;
  *
  * @author Ellouze Skander
  */
-public class Herboriseterie {
+public class Herboriseterie extends Etablissement {
  
     private int id_herbo;
-    private String type;
+    private int livraison;
 
 
-    public Herboriseterie(int id_herbo, String type) {
+    public Herboriseterie(int id_herbo, int livraison) {
         this.id_herbo = id_herbo;
-        this.type = type;
+        this.livraison = livraison;
 
+    }
+
+    public Herboriseterie() {
     }
 
     public int getId_herbo() {
@@ -29,19 +32,19 @@ public class Herboriseterie {
         this.id_herbo = id_herbo;
     }
 
-    public String getType() {
-        return type;
+    public int getLivraison() {
+        return livraison;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setLivraison(int livraison) {
+        this.livraison = livraison;
     }
 
 
 
     @Override
     public String toString() {
-        return "Herboriseterie{" + "id_herbo=" + id_herbo + ", type=" + type + '}';
+        return "Herboriseterie{" + "id_herbo=" + id_herbo + ", livraison=" + livraison + '}';
     }
     
     

@@ -9,7 +9,7 @@ package Entities;
  *
  * @author Ellouze Skander
  */
-public class Laboratoire {
+public class Laboratoire extends Etablissement {
     private int id_laboratoire;
     private int cnam;
     private int nb_equipe;
@@ -20,6 +20,9 @@ public class Laboratoire {
         this.cnam = cnam;
         this.nb_equipe = nb_equipe;
         this.type = type;
+    }
+
+    public Laboratoire() {
     }
 
     public int getId_laboratoire() {

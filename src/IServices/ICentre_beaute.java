@@ -18,6 +18,6 @@ public interface ICentre_beaute {
 
 public void ajouterCentre(Centre_beaute c,Etablissement e);
 public void supprimerCentre(Centre_beaute c);
-public void modifierCentre(Centre_beaute c);
+public void modifierCentre(Centre_beaute c,Etablissement e);
 
 }

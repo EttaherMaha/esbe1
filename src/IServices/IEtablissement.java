@@ -7,6 +7,7 @@ package IServices;
 
 import Entities.Etablissement;
 import java.util.List;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -15,8 +16,9 @@ import java.util.List;
 public interface IEtablissement {
     
 
-public List<Etablissement> chercherEtablissementParNom(String nom);
+public ObservableList<Etablissement> chercherEtablissementParNom(String nom);
 public List<Etablissement> chercherEtablissementParAdresse(String adresse);
 public List<Etablissement> afficherEtablissement();
- 
+ public void supprimerEtablissement(Etablissement e);
+
 }
