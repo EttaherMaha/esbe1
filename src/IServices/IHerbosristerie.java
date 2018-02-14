@@ -17,7 +17,7 @@ public interface IHerbosristerie {
  
         public void ajouterHerbosristerie(Herboriseterie c,Etablissement e);
         public void supprimerHerbosristerie(Herboriseterie c);
-        public void modifierHerbosristerie(Herboriseterie c,Etablissement e);
+        public void modifierHerbosristerie(Herboriseterie c,Etablissement e); 
 
     
 }

@@ -82,7 +82,7 @@ public class HopitauxService implements IHopitaux{
             Statement stl = connexion.createStatement();
             stl.executeUpdate(sql);
             st2.executeUpdate(sql2);
-            System.out.println("Update done");
+            System.out.println("Update done"); 
         } catch (SQLException ex) {
            System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());

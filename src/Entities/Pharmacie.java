@@ -5,7 +5,7 @@
  */
 package Entities;
 
-import Utils.type;
+
 
 /**
  *
@@ -14,9 +14,9 @@ import Utils.type;
 public class Pharmacie {
     
    private int id_pharmacie;
-   private type type;
+   private String type;
 
-    public Pharmacie(type type) {
+    public Pharmacie(String type) {
         this.type = type;
     }
 
@@ -35,10 +35,10 @@ public class Pharmacie {
     }
 
     public String getType() {
-        return type.name();
+        return this.type;
     }
 
-    public void setType(type type) {
+    public void setType(String type) {
         this.type = type;
     }
 

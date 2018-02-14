@@ -111,6 +111,6 @@ public class FicheClientController implements Initializable {
       
      tableFiche.setItems(data);
    //  afficher();
-    }
+    } 
     
 }

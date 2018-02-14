@@ -83,7 +83,7 @@ public class CabinetMedicalService implements ICabinetMedical {
         String sql2="UPDATE etablissements SET nom='"+e.getNom()+"',adresse='"+e.getAdresse()+"',date_ouverture='"+e.getDate_ouverture()+"',date_fermeture='"+e.getDate_fermeture()+"',email='"+e.getEmail()+"',numero="+e.getNum()+",fax="+e.getFax()+",page_facebook='"+e.getPage_fb()+"',site_web='"+e.getPage_fb()+"',heure_ouverture="+e.getHeure_ouverture()+",heure_fermeture="+e.getHeure_fermeture()+",image='"+e.getImage()+"' where id=='"+ c.getId_cabinet()+"';";
         try {
             Statement st2=connexion.createStatement();
-            Statement stl = connexion.createStatement();
+            Statement stl = connexion.createStatement(); 
             stl.executeUpdate(sql);
             st2.executeUpdate(sql2);
             System.out.println("Update done");

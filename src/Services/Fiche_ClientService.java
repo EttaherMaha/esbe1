@@ -152,7 +152,7 @@ private ObservableList<Fiche_Client> data;
 
             ResultSet  rs1=stl.executeQuery(sql1);       
             System.out.println("Affichage Done");
-            while(rs1.next())
+            while(rs1.next()) 
             {
                 String sql2="select username from user where id="+rs1.getInt("id_user")+";";
                 Statement st2 = conn.createStatement();

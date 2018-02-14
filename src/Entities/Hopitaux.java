@@ -9,7 +9,7 @@ package Entities;
  *
  * @author Ellouze Skander
  */
-public class Hopitaux extends Etablissement {
+public class Hopitaux extends Etablissement { 
     
     private int id_hopital;
     private String type;

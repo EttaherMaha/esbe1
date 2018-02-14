@@ -9,7 +9,7 @@ package Entities;
  *
  * @author Ellouze Skander
  */
-public class Parapharmacie extends Etablissement {
+public class Parapharmacie extends Etablissement { 
     
     private int id_para;
     private int livraison;

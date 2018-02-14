@@ -231,7 +231,7 @@ public class EtablissementController  implements Initializable {
       
      TableEtab.setItems(data);
    //  afficher();
-    }
+    } 
           
     @FXML
     public void Modifier (CellEditEvent edditedCell)

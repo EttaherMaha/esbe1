@@ -17,5 +17,5 @@ public interface ILaboratoire {
     
         public void ajouterHopitaux(Laboratoire c,Etablissement e);
         public void supprimerHopitaux(Laboratoire c);
-        public void modifierHopitaux(Laboratoire c,Etablissement e);
+        public void modifierHopitaux(Laboratoire c,Etablissement e); 
 }

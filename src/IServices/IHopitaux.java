@@ -16,5 +16,5 @@ public interface IHopitaux {
     
             public void ajouterHopitaux(Hopitaux c,Etablissement e);
         public void supprimerHopitaux(Hopitaux c);
-        public void modifierHopitaux(Hopitaux c,Etablissement e);
+        public void modifierHopitaux(Hopitaux c,Etablissement e); 
 }

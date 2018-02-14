@@ -11,7 +11,7 @@ package Entities;
  */
 public class CabinetMedical extends Etablissement {
     private int id_cabinet;
-    private int cnam;
+    private int cnam; 
 
     
      public CabinetMedical( int cnam) {

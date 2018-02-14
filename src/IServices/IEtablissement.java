@@ -19,6 +19,6 @@ public interface IEtablissement {
 public ObservableList<Etablissement> chercherEtablissementParNom(String nom);
 public List<Etablissement> chercherEtablissementParAdresse(String adresse);
 public List<Etablissement> afficherEtablissement();
- public void supprimerEtablissement(Etablissement e);
+ public void supprimerEtablissement(Etablissement e); 
 
 }

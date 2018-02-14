@@ -12,12 +12,16 @@ import Entities.Herboriseterie;
 import Entities.Hopitaux;
 import Entities.Laboratoire;
 import Entities.Parapharmacie;
+import Entities.Pharmacie;
+import Entities.SalledeSport;
 import Services.CabinetMedicalService;
 import Services.EtablissementService;
 import Services.HerbosristerieService;
 import Services.HopitauxService;
 import Services.LaboratoireService;
 import Services.ParapharmacieService;
+import Services.PharmacieService;
+import Services.SalledeSportService;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -73,6 +77,9 @@ public class AjouterEtablissementController implements Initializable {
 
     @FXML
     private ComboBox<String> combobox3;
+    
+    @FXML
+    private ComboBox<String> combobox4;
 
     @FXML
     private CheckBox checkbox3;
@@ -80,6 +87,9 @@ public class AjouterEtablissementController implements Initializable {
     @FXML
     private TextField txtDO;
 
+    @FXML
+    private TextField txt4;
+    
     @FXML
     private TextField txtDF;
 
@@ -144,38 +154,46 @@ public class AjouterEtablissementController implements Initializable {
         ObservableList<String> options3 = FXCollections.observableArrayList(
                 "radio", "biologie_medical", "sang");
         combobox3.setItems(options3);
+        
+        ObservableList<String> options4 = FXCollections.observableArrayList(
+                "nuit", "jour", "garde");
+        combobox4.setItems(options4);
 
         checkbox1.setVisible(false);
         checkbox2.setVisible(false);
         checkbox3.setVisible(false);
-
         combobox1.setVisible(false);
         combobox2.setVisible(false);
         combobox3.setVisible(false);
-
+        combobox4.setVisible(false);
         txt2.setVisible(false);
+        txt4.setVisible(false);
 
     }
 
     @FXML
     public void typeEtab(ActionEvent event) {
+        label1.setText("");
+        label2.setText("");
+        label3.setText("");
         checkbox1.setVisible(false);
         checkbox2.setVisible(false);
         checkbox3.setVisible(false);
-
+        txt4.setVisible(false);
         combobox1.setVisible(false);
         combobox2.setVisible(false);
         combobox3.setVisible(false);
-
+        combobox4.setVisible(false);
         txt2.setVisible(false);
         if (combo.getSelectionModel().getSelectedItem() == "Cabinet Medical") {
             label1.setText("");
             label2.setText("");
             label3.setText("");
+            combobox4.setVisible(false);
             checkbox1.setVisible(false);
             checkbox2.setVisible(false);
             checkbox3.setVisible(false);
-
+            txt4.setVisible(false);
             combobox1.setVisible(false);
             combobox2.setVisible(false);
             combobox3.setVisible(false);
@@ -191,22 +209,24 @@ public class AjouterEtablissementController implements Initializable {
             checkbox1.setVisible(false);
             checkbox2.setVisible(false);
             checkbox3.setVisible(false);
-
+            combobox4.setVisible(false);
             combobox1.setVisible(false);
             combobox2.setVisible(false);
             combobox3.setVisible(false);
             label1.setText("livraison");
             checkbox1.setText("");
             checkbox1.setVisible(true);
+            txt4.setVisible(false);
         }
         if (combo.getSelectionModel().getSelectedItem() == "Hopitale") {
             label1.setText("");
             label2.setText("");
             label3.setText("");
+            txt4.setVisible(false);
             checkbox1.setVisible(false);
             checkbox2.setVisible(false);
             checkbox3.setVisible(false);
-
+            combobox4.setVisible(false);
             combobox1.setVisible(false);
             combobox2.setVisible(false);
             combobox3.setVisible(false);
@@ -227,7 +247,8 @@ public class AjouterEtablissementController implements Initializable {
             checkbox1.setVisible(false);
             checkbox2.setVisible(false);
             checkbox3.setVisible(false);
-
+            combobox4.setVisible(false);
+            txt4.setVisible(false);
             combobox1.setVisible(false);
             combobox2.setVisible(false);
             combobox3.setVisible(false);
@@ -246,7 +267,7 @@ public class AjouterEtablissementController implements Initializable {
             checkbox1.setVisible(false);
             checkbox2.setVisible(false);
             checkbox3.setVisible(false);
-
+            combobox4.setVisible(false);
             combobox1.setVisible(false);
             combobox2.setVisible(false);
             combobox3.setVisible(false);
@@ -255,8 +276,35 @@ public class AjouterEtablissementController implements Initializable {
             checkbox1.setVisible(true);
         }
         if (combo.getSelectionModel().getSelectedItem() == "Pharmacie") {
+            label1.setText("");
+            label2.setText("");
+            label3.setText("");
+            txt4.setVisible(false);
+            checkbox1.setVisible(false);
+            checkbox2.setVisible(false);
+            checkbox3.setVisible(false);
+            combobox4.setVisible(true);
+            combobox1.setVisible(false);
+            combobox2.setVisible(false);
+            combobox3.setVisible(false);
+            label1.setText("Type");
+            checkbox1.setText("");
+            checkbox1.setVisible(true);
         }
         if (combo.getSelectionModel().getSelectedItem() == "Salle de sport") {
+        label1.setText("Nbr entraineur");
+        label2.setText("");
+        label3.setText("");
+        checkbox1.setVisible(false);
+        checkbox2.setVisible(false);
+        checkbox3.setVisible(false);
+        txt4.setVisible(true);
+        combobox1.setVisible(false);
+        combobox2.setVisible(false);
+        combobox3.setVisible(false);
+        combobox4.setVisible(false);
+        txt2.setVisible(false);
+        
         }
     }
 
@@ -396,10 +444,49 @@ public class AjouterEtablissementController implements Initializable {
                 h.setLivraison(0);
             }
             hs.ajouterParapharmacie(h, e);
-        }
+        } 
         if (combo.getSelectionModel().getSelectedItem() == "Pharmacie") {
+            PharmacieService hs = new PharmacieService();
+            Etablissement e = new Etablissement();
+            e.setNom(txtNom.getText());
+            e.setAdresse(txtAdresse.getText());
+            e.setDate_ouverture(txtDO.getText());
+            e.setDate_fermeture(txtDF.getText());
+            e.setEmail(txtEmail.getText());
+            e.setNum(Integer.parseInt(txtNum.getText()));
+            e.setFax(Integer.parseInt(txtFax.getText()));
+            e.setPage_fb(txtFB.getText());
+            e.setSite_web(txtSW.getText());
+            e.setHeure_ouverture(Integer.parseInt(txtHO.getText()));
+            e.setHeure_fermeture(Integer.parseInt(txtHF.getText()));
+            e.setImage(txtImage.getText());
+            e.setIdUser(1);
+            Pharmacie h = new Pharmacie();
+            
+                h.setType(combobox4.getSelectionModel().getSelectedItem().toString());
+            
+            hs.ajouterPharmacie(h, e);
         }
         if (combo.getSelectionModel().getSelectedItem() == "Salle de sport") {
+            SalledeSportService hs = new SalledeSportService();
+            Etablissement e = new Etablissement();
+            e.setNom(txtNom.getText());
+            e.setAdresse(txtAdresse.getText());
+            e.setDate_ouverture(txtDO.getText());
+            e.setDate_fermeture(txtDF.getText());
+            e.setEmail(txtEmail.getText());
+            e.setNum(Integer.parseInt(txtNum.getText()));
+            e.setFax(Integer.parseInt(txtFax.getText()));
+            e.setPage_fb(txtFB.getText());
+            e.setSite_web(txtSW.getText());
+            e.setHeure_ouverture(Integer.parseInt(txtHO.getText()));
+            e.setHeure_fermeture(Integer.parseInt(txtHF.getText()));
+            e.setImage(txtImage.getText());
+            e.setIdUser(1);
+            SalledeSport h = new SalledeSport();
+            h.setNb_entraineur(Integer.parseInt(txt4.getText()));
+            
+            hs.ajouterSalle(h, e);
         }
 
         Stage stage = (Stage) btnValider.getScene().getWindow();

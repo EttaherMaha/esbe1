@@ -37,7 +37,7 @@ public class Herboriseterie extends Etablissement {
     }
 
     public void setLivraison(int livraison) {
-        this.livraison = livraison;
+        this.livraison = livraison; 
     }
 
 

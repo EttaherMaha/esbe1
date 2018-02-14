@@ -53,7 +53,7 @@ public class Laboratoire extends Etablissement {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(String type) { 
         this.type = type;
     }
 

@@ -11,7 +11,7 @@ package Entities;
  */
 public class Centre_beaute extends Etablissement {
     private int id_centre;
-    private String image;
+    private String image; 
 
 
     public Centre_beaute(int id_centre, String image) {

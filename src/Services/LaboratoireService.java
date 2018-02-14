@@ -79,7 +79,7 @@ public class LaboratoireService implements ILaboratoire {
    
          String sql ="UPDATE laboratoire SET cnam ="+c.getCnam()+","+c.getNb_equipe()+",'"+c.getType()+"' WHERE id_laboratoire ="+ c.getId_laboratoire()+";";
        String sql2="UPDATE etablissements SET nom='"+e.getNom()+"',adresse='"+e.getAdresse()+"',date_ouverture='"+e.getDate_ouverture()+"',date_fermeture='"+e.getDate_fermeture()+"',email='"+e.getEmail()+"',numero="+e.getNum()+",fax="+e.getFax()+",page_facebook='"+e.getPage_fb()+"',site_web='"+e.getPage_fb()+"',heure_ouverture="+e.getHeure_ouverture()+",heure_fermeture="+e.getHeure_fermeture()+",image='"+e.getImage()+"' where id="+c.getId_laboratoire()+";";
-        try {
+        try { 
             Statement st2=connexion.createStatement();
             Statement stl = connexion.createStatement();
             stl.executeUpdate(sql);

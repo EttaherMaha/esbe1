@@ -32,7 +32,7 @@ public class EtablissementTest extends Application {
         //Alert a = new Alert(Alert.AlertType.ERROR);
     }
 
-    /**
+    /** 
      * @param args the command line arguments
      */
     public static void main(String[] args) {

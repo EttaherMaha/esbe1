@@ -17,7 +17,7 @@ public class SalledeSport {
         this.nb_entraineur = nb_entraineur;
     }
 
-    public SalledeSport() {
+    public SalledeSport() { 
     }
 
     public int getId_salle() {

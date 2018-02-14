@@ -26,7 +26,7 @@ public class FicheTest extends Application {
         Stage.setScene(scene);
         Stage.show();
         //Alert a = new Alert(Alert.AlertType.ERROR);
-    }
+    } 
 
     /**
      * @param args the command line arguments

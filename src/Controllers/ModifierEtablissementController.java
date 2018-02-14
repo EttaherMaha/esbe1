@@ -121,7 +121,7 @@ public class ModifierEtablissementController implements Initializable {
     EtablissementService es = new EtablissementService();
     Etablissement e = new Etablissement();
     EtablissementController ec = new EtablissementController();
-    int a = ec.rr();
+    int a = ec.rr(); 
     /**
      * Initializes the controller class.
      */

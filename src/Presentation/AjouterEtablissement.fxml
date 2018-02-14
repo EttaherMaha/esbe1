@@ -45,5 +45,7 @@
       <CheckBox fx:id="checkbox3" layoutX="250.0" layoutY="625.0" mnemonicParsing="false" text="CheckBox" />
       <ComboBox fx:id="combobox3" layoutX="248.0" layoutY="621.0" prefWidth="150.0" />
       <TextField fx:id="txt2" layoutX="249.0" layoutY="586.0" />
+      <ComboBox fx:id="combobox4" layoutX="248.0" layoutY="546.0" prefWidth="150.0" />
+      <TextField fx:id="txt4" layoutX="249.0" layoutY="546.0" />
    </children>
 </AnchorPane>

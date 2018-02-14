@@ -12,7 +12,7 @@ import java.sql.Timestamp;
  *
  * @author Ellouze Skander
  */
-public class Etablissement {
+public class Etablissement { 
     
     private int id;
     private String nom;

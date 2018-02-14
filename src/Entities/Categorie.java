@@ -13,7 +13,7 @@ public class Categorie
 {
     private int id_categorie;
     private String nom;
-    private int id_user;
+    private int id_user; 
 
     public Categorie()
     {

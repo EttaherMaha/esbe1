@@ -53,7 +53,7 @@ public class GoogleMapsController extends Application {
         WebView webView = new WebView();
         WebEngine webEngine = webView.getEngine();
         
-         
+          
          
         public MyBrowser(){
           

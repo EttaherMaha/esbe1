@@ -11,7 +11,7 @@ import javafx.fxml.Initializable;
 
 /**
  * FXML Controller class
- *
+ * 
  * @author Ellouze Skander
  */
 public class AjouterCabinetController implements Initializable {

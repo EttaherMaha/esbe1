@@ -19,5 +19,5 @@ public interface IFiche_Client {
     public void modifierFicheClient(Fiche_Client fc);
     public  ObservableList<Fiche_Client>  rechercherFiche_Client (String nom);
     public Fiche_Client afficherFicheClient(Fiche_Client fc);
-    public List <Fiche_Client> afficherToutFicheClient();
+    public List <Fiche_Client> afficherToutFicheClient(); 
 }

@@ -36,15 +36,9 @@ public class PharmacieService implements IPharmacie {
     public void ajouterPharmacie(Pharmacie p, Etablissement e) {
         try {
         
-               String query1 = "INSERT INTO etablissements (nom, adresse, date_ouverture,"
-                       + " date_fermeture, email, numero,fax,page_facebook,site_web,heure_ouverture,"
-                       + "heure_fermeture,id_user) "
-                    + "values ( '"+e.getNom()+"','"+e.getAdresse()+"','"+e.getDate_ouverture()+
-                       "','"+e.getDate_fermeture()+"','"+e.getEmail()+"',"+e.getNum()+","+e.getFax()+
-                       ",'"+e.getPage_fb()+"','"+e.getSite_web()+"','"+e.getHeure_ouverture()+"','"
-                       +e.getHeure_fermeture()+"',1 );";
-           
-               PreparedStatement stl= connexion.prepareStatement(query1, Statement.RETURN_GENERATED_KEYS);
+               String query1 = "INSERT INTO Etablissements (nom, adresse, date_ouverture, date_fermeture, email, numero,fax,page_facebook,site_web,heure_ouverture,heure_fermeture,image,id_user) "
+                    + "values ( '"+e.getNom()+"','"+e.getAdresse()+"','"+e.getDate_ouverture()+"','"+e.getDate_fermeture()+"','"+e.getEmail()+"',"+e.getNum()+","+e.getFax()+",'"+e.getPage_fb()+"','"+e.getSite_web()+"','"+e.getHeure_ouverture()+"','"+e.getHeure_fermeture()+"','"+e.getImage()+"',1 );";
+                PreparedStatement stl= connexion.prepareStatement(query1, Statement.RETURN_GENERATED_KEYS);
             stl.executeUpdate();
               ResultSet  generatedKeys = stl.getGeneratedKeys();
               generatedKeys.next();
@@ -87,11 +81,15 @@ public class PharmacieService implements IPharmacie {
     }
 
     @Override
-    public void modifierCabinet(Pharmacie c) {
+    public void modifierCabinet(Pharmacie c,Etablissement e) {
         String sql ="UPDATE pharmacie SET type ='"+c.getType()+ "' WHERE id_pharmacie ='"+ c.getId_pharmacie()+"';";
+        String sql2="UPDATE etablissements SET nom='"+e.getNom()+"',adresse='"+e.getAdresse()+"',date_ouverture='"+e.getDate_ouverture()+"',date_fermeture='"+e.getDate_fermeture()+"',email='"+e.getEmail()+"',numero="+e.getNum()+",fax="+e.getFax()+",page_facebook='"+e.getPage_fb()+"',site_web='"+e.getPage_fb()+"',heure_ouverture="+e.getHeure_ouverture()+",heure_fermeture="+e.getHeure_fermeture()+",image='"+e.getImage()+"' where id='"+ c.getId_pharmacie()+"';";
         try {
-            Statement stl = connexion.createStatement();
+            Statement st2=connexion.createStatement();
+            Statement stl = connexion.createStatement(); 
             stl.executeUpdate(sql);
+            st2.executeUpdate(sql2);
+            System.out.println("Update done");
             System.out.println("Update done");
         } catch (SQLException ex) {
            System.out.println("SQLException: " + ex.getMessage());

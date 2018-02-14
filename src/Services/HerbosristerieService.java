@@ -25,7 +25,7 @@ import java.util.logging.Logger;
 public class HerbosristerieService implements IHerbosristerie {
 
   
-        Connection connexion;
+        Connection connexion; 
    
     public HerbosristerieService() {
         connexion = MyDB.getinstance().getConnexion();
