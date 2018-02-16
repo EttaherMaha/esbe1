@@ -340,7 +340,7 @@ public class AjouterEtablissementController implements Initializable {
         }
         if (combo.getSelectionModel().getSelectedItem() == "Herboriseterie") {
             HerbosristerieService hs = new HerbosristerieService();
-
+ 
             Etablissement e = new Etablissement();
 
             e.setNom(txtNom.getText());

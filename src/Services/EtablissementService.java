@@ -200,7 +200,35 @@ public class EtablissementService implements IEtablissement {
         }
 
     }
+    
+    public String findNameById(int id)
+    {
+        ResultSet rs;
+        String sql ="select * from etablissements where id ="+id+";";
+        String nom = null;
+        try 
+        {
+            Statement stl = connexion.createStatement();
+
+            ResultSet  rs2=stl.executeQuery(sql);       
+            System.out.println("Affichage Done");
+            while(rs2.next())
+            {
+                
+                nom=(rs2.getString("nom"));
+            }
+            return nom;
+        } 
+        catch (SQLException ex) 
+        {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        return nom;
+    }
         
+    
         
 
 }

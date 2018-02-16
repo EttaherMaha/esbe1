@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controllers.AjoutFicheClientController">
+   <children>
+      <Label layoutX="256.0" layoutY="292.0" prefHeight="17.0" prefWidth="70.0" text="Suivie :" />
+      <TextField fx:id="suivie" layoutX="356.0" layoutY="177.0" prefHeight="356.0" prefWidth="337.0" />
+      <Label layoutX="445.0" layoutY="65.0" prefHeight="17.0" prefWidth="263.0" text="Ajouter fiche client :" />
+      <Button fx:id="ajouter" layoutX="759.0" layoutY="330.0" mnemonicParsing="false" onAction="#AjouterFiche" text="Ajouter" />
+   </children>
+</AnchorPane>

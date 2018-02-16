@@ -6,6 +6,7 @@
 package IServices;
 
 import Entities.Fiche_Client;
+import Entities.fos_user;
 import java.util.List;
 import javafx.collections.ObservableList;
 
@@ -20,4 +21,8 @@ public interface IFiche_Client {
     public  ObservableList<Fiche_Client>  rechercherFiche_Client (String nom);
     public Fiche_Client afficherFicheClient(Fiche_Client fc);
     public List <Fiche_Client> afficherToutFicheClient(); 
+    public  List<String> listerNomsPartanaire() ;
+    public List<String> listerNomsEtab();
+    public fos_user getUser(int idUser);
+     
 }

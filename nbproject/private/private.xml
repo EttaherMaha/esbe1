@@ -3,10 +3,66 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Entities/Hopitaux.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Entities/Categorie.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/IServices/IEtablissement.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Services/fos_userService.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/GoogleMaps.fxml</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Services/SalledeSportService.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/AjouterEtablissement.fxml</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/ModifierEtablissement.fxml</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/IServices/ICabinetMedical.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/IServices/IProduitHerbo.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Entities/SalledeSport.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Services/LaboratoireService.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Services/Fiche_ClientService.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Entities/Evenement.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/Modifier2Etablissement.fxml</file>
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Controllers/AjouterEtablissementController.java</file>
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Controllers/EtablissementController.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/AjouterCabinetController.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/esbe/Esbe.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Entities/Conseil.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/GoogleMapsV3.html</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/IServices/IFiche_Client.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Entities/Centre_beaute.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Services/ParapharmacieService.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Entities/Parapharmacie.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/esbe/TestEvenement.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Services/HerbosristerieService.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/IServices/Ifos_user.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/IServices/ICentre_beaute.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/esbe/FicheTest.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Services/PharmacieService.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Entities/Laboratoire.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/IServices/IPharmacie.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/esbee/Esbee.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/IServices/IHopitaux.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Services/HopitauxService.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Entities/Herboriseterie.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Entities/Fiche_Client.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Controllers/FicheClientController.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Entities/Service.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/IServices/IHerbosristerie.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Services/EtablissementService.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Services/EvenementService.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Entities/Etablissement.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Entities/Pharmacie.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Controllers/AjoutFicheClientController.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/AjouterCabinet.fxml</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/IServices/ISalledeSport.java</file>
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/esbe/EtablissementTest.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Entities/CabinetMedical.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/IServices/ILaboratoire.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/IServices/IParapharmacie.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Services/CabinetMedicalService.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Entities/fos_user.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Services/Centre_beauteService.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/FicheClient.fxml</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/AjoutFicheClient.fxml</file>
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/Etablissement.fxml</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/ModifierEtablissementController.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/GoogleMapsController.java</file>
         </group>
     </open-files>
 </project-private>

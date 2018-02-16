@@ -17,7 +17,9 @@ import javafx.stage.Stage;
  *
  * @author Ellouze Skander
  */
-public class FicheTest extends Application {
+public class FicheTest extends Application 
+
+{
 
     @Override
     public void start(Stage Stage) throws IOException {

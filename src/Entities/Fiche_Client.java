@@ -14,6 +14,8 @@ public class Fiche_Client {
     private String suivie;
     private int id_user;
     private int id_etab;
+    private String nomUser;
+    private String nomEtab;
 
     public Fiche_Client(int id, String suivie, int id_user, int id_etablissement) {
         this.id = id;
@@ -63,10 +65,45 @@ public class Fiche_Client {
         this.id_etab = id_etablissement;
     }
 
-    @Override
-    public String toString() {
-        return "Fiche_Client{" + "id=" + id + ", suivie=" + suivie + ", id_user=" + id_user + ", id_etablissement=" + id_etab + '}';
+    public void setId_etab(int id_etab) {
+        this.id_etab = id_etab;
     }
+
+    public void setNomUser(String nomUser) {
+        this.nomUser = nomUser;
+    }
+
+    public void setNomEtab(String nomEtab) {
+        this.nomEtab = nomEtab;
+    }
+
+    
+    public int getId_etab() {
+        return id_etab;
+    }
+
+    public String getNomUser() {
+        return nomUser;
+    }
+
+    public String getNomEtab() {
+        return nomEtab;
+    }
+
+    @Override
+    public String toString() 
+    {
+        return "Fiche_Client{" + "id=" + id + ", suivie=" + suivie + ", id_user=" + id_user + ", id_etab=" + id_etab + '}';
+    }
+
+    
+    
+    
+
+    
+    
+    
+
 
     
 }

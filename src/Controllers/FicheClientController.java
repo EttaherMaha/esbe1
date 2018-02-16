@@ -10,6 +10,7 @@ import Entities.Etablissement;
 import Entities.Fiche_Client;
 import Services.EtablissementService;
 import Services.Fiche_ClientService;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -21,14 +22,19 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -45,22 +51,19 @@ public class FicheClientController implements Initializable {
     private TextField txtRecherche;
 
     @FXML
-    private TableColumn<?, ?> suivie;
+    private TableColumn<Fiche_Client, String> suivie;
 
-    @FXML
-    private ComboBox<?> comboPatient;
 
-    @FXML
-    private TableColumn<?, ?> id;
+    private TableColumn<Fiche_Client, String> id;
 
     @FXML
     private Button btnAjouter;
 
     @FXML
-    private TableColumn<?, ?> nom;
+    private TableColumn<Fiche_Client, String> nom;
 
     @FXML
-    private TableColumn<?, ?> etab;
+    private TableColumn<Fiche_Client,String > etab;
 
     @FXML
     private Button btnSupprimer;
@@ -90,12 +93,52 @@ public class FicheClientController implements Initializable {
             
             tableFiche.setItems(data);
             
-            id.setCellValueFactory(new PropertyValueFactory<>("id"));
+            //id.setCellValueFactory(new PropertyValueFactory<>("id"));
             suivie.setCellValueFactory(new PropertyValueFactory<>("suivie"));
-            nom.setCellValueFactory(new PropertyValueFactory<>("id_user"));
-            etab.setCellValueFactory(new PropertyValueFactory<>("id_etab"));
-             
-    } 
+            nom.setCellValueFactory(new PropertyValueFactory<>("nomUser"));
+            etab.setCellValueFactory(new PropertyValueFactory<>("nomEtab"));
+            
+            
+//            nom.setCellValueFactory(new PropertyValueFactory<>("id_user"));
+//            etab.setCellValueFactory(new PropertyValueFactory<>("id_etab"));
+//    
+            
+    }
+
+    
+    
+    public void afficher()
+    {
+         List<Fiche_Client> LE = cs.afficherToutFicheClient();
+            data = FXCollections.observableArrayList();
+            Etablissement e;
+            
+            LE.stream().forEach((j)-> {
+                data.add(j);
+            });
+            
+            tableFiche.setItems(data);
+            
+            //id.setCellValueFactory(new PropertyValueFactory<>("id"));
+            suivie.setCellValueFactory(new PropertyValueFactory<>("suivie"));
+            nom.setCellValueFactory(new PropertyValueFactory<>("nomUser"));
+            etab.setCellValueFactory(new PropertyValueFactory<>("nomEtab"));
+            
+    }
+    
+    
+    
+    @FXML
+    void Ajout(ActionEvent event) throws IOException 
+    {
+  Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/Presentation/AjoutFicheClient.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    
     
     
     @FXML
@@ -103,14 +146,29 @@ public class FicheClientController implements Initializable {
     {
      Fiche_ClientService es = new Fiche_ClientService();
      data=es.rechercherFiche_Client(txtRecherche.getText().toString());
+             
 
-            id.setCellValueFactory(new PropertyValueFactory<>("id"));
+          //  id.setCellValueFactory(new PropertyValueFactory<>("id"));
             suivie.setCellValueFactory(new PropertyValueFactory<>("suivie"));
             nom.setCellValueFactory(new PropertyValueFactory<>("id_user"));
             etab.setCellValueFactory(new PropertyValueFactory<>("id_etab"));
       
      tableFiche.setItems(data);
-   //  afficher();
+     afficher();
     } 
+    
+    
+    @FXML
+        void supprimerFiche(ActionEvent event)
+    {
+        Fiche_Client f = tableFiche.getSelectionModel().getSelectedItem();
+        Fiche_ClientService fs= new Fiche_ClientService();
+        fs.supprimerFicheClient(f);
+        afficher();  
+    }
+        
+    
+    
+
     
 }
