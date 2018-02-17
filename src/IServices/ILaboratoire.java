@@ -15,7 +15,7 @@ import Entities.Laboratoire;
  */
 public interface ILaboratoire {
     
-        public void ajouterHopitaux(Laboratoire c,Etablissement e);
-        public void supprimerHopitaux(Laboratoire c);
-        public void modifierHopitaux(Laboratoire c,Etablissement e); 
+        public void ajouterLaboratoire(Laboratoire c);
+        public void supprimerLaboratoire(Laboratoire c);
+        public void modifierLaboratoire(Laboratoire c); 
 }

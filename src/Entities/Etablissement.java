@@ -185,8 +185,24 @@ public class Etablissement {
     @Override
     public String toString() 
     {
-        return "Etablissement{" + "id=" + id + ", nom=" + nom + ", adresse=" + adresse + ", date_ouverture=" + date_ouverture + ", date_fermeture=" + date_fermeture + ", email=" + email + ", num=" + num + ", fax=" + fax + ", page_fb=" + page_fb + ", site_web=" + site_web + ", heure_ouverture=" + heure_ouverture + ", heure_fermeture=" + heure_fermeture + '}';
+        String mot1=nom ; 
+        String mot2="Adresse : " + adresse;
+        String mot3="Date ouverture : " + date_ouverture;
+        String mot4="Date fermeture : " + date_fermeture;
+        String mot5="Email : " + email;
+        String mot6="Numéro téléphone : " + num;
+        String mot7="Fax : " + fax;
+        String mot8="Page Facebok : " + page_fb;
+        String mot9="Site Web : " + site_web;
+        String mot10="Heure d'ouverture : " + heure_ouverture;
+        String mot11="Heure fermeture : " + heure_fermeture;
+        String Newligne=System.getProperty("line.separator"); 
+        String resultat=mot1+Newligne+mot2+Newligne+mot3+Newligne+mot4+Newligne+mot5+Newligne+mot6+Newligne+mot7+Newligne+mot8+Newligne+mot9+Newligne+mot10+Newligne+mot11+Newligne+"______________________________________________________________________________________________________________________________________________________________________"; 
+        
+        
+        return resultat;
     }
+    
 
     public int getIdUser() {
         return idUser;

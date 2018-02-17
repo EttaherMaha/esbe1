@@ -14,7 +14,7 @@ import Entities.SalledeSport;
  * @author anis
  */
 public interface ISalledeSport {
-    public void ajouterSalle(SalledeSport s,Etablissement e);
+    public void ajouterSalle(SalledeSport s);
 public void supprimerSalle(SalledeSport s);
-public void modifierSalle(SalledeSport s,Etablissement e); 
+public void modifierSalle(SalledeSport s); 
 }

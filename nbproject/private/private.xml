@@ -8,6 +8,7 @@
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/IServices/IEtablissement.java</file>
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Services/fos_userService.java</file>
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/GoogleMaps.fxml</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Controllers/Etablissement2Controller.java</file>
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Services/SalledeSportService.java</file>
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/AjouterEtablissement.fxml</file>
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/ModifierEtablissement.fxml</file>
@@ -21,8 +22,12 @@
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Controllers/AjouterEtablissementController.java</file>
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Controllers/EtablissementController.java</file>
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/AjouterCabinetController.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/esbe/Etablissement2Test.java</file>
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/esbe/Esbe.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/DataStorage/MyDB.java</file>
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Entities/Conseil.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/IServices/ICategorie.java</file>
+            <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/Etablissement2.fxml</file>
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Presentation/GoogleMapsV3.html</file>
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/IServices/IFiche_Client.java</file>
             <file>file:/C:/Users/Ellouze%20Skander/Documents/GitHub/esbe1/src/Entities/Centre_beaute.java</file>

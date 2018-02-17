@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controllers.Etablissement3Controller">
+ <children>
+      <Label layoutX="333.0" layoutY="403.0" text="Veuillez entrer le nom de l'etablissement que vous voudrez chercher : " />
+      <TextField fx:id="txtRecherche" layoutX="720.0" layoutY="399.0" prefHeight="25.0" prefWidth="142.0" promptText="Nom établissement" />
+      <Button fx:id="ChercherButton" layoutX="871.0" layoutY="399.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" text="Chercher" />
+      <Button fx:id="SupprimerButton" layoutX="612.0" layoutY="470.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="34.0" prefWidth="108.0" text="Supprimer" />
+      <Button fx:id="ModifierButton" layoutX="775.0" layoutY="470.0" mnemonicParsing="false" onAction="#ModifierEtab" prefHeight="34.0" prefWidth="108.0" text="Modifier" />
+      <Button fx:id="AjouterButton" layoutX="446.0" layoutY="470.0" mnemonicParsing="false" onAction="#CreerEtab" prefHeight="34.0" prefWidth="108.0" text="Ajouter" />
+      <StackPane fx:id="pane" layoutX="14.0" prefHeight="530.0" prefWidth="265.0">
+         <children>
+            <AnchorPane fx:id="ap2" prefHeight="545.0" prefWidth="264.0">
+               <children>
+                  <TextField fx:id="txt4" layoutX="75.0" layoutY="132.0" />
+                  <ComboBox fx:id="combobox4" layoutX="74.0" layoutY="132.0" prefWidth="150.0" />
+                  <TextField fx:id="txt2" layoutX="75.0" layoutY="182.0" />
+                  <ComboBox fx:id="combobox3" layoutX="75.0" layoutY="230.0" prefWidth="150.0" />
+                  <CheckBox fx:id="checkbox3" layoutX="94.0" layoutY="234.0" mnemonicParsing="false" text="CheckBox" />
+                  <CheckBox fx:id="checkbox2" layoutX="94.0" layoutY="186.0" mnemonicParsing="false" text="CheckBox" />
+                  <ComboBox fx:id="combobox2" layoutX="75.0" layoutY="182.0" prefWidth="150.0" />
+                  <ComboBox fx:id="combobox1" layoutX="74.0" layoutY="132.0" prefWidth="150.0" />
+                  <CheckBox fx:id="checkbox1" layoutX="101.0" layoutY="136.0" mnemonicParsing="false" text="CheckBox" />
+                  <Label fx:id="label1" layoutX="14.0" layoutY="136.0" />
+                  <Label fx:id="label2" layoutX="14.0" layoutY="186.0" />
+                  <Label fx:id="label3" layoutX="14.0" layoutY="234.0" />
+                  <Button fx:id="btnSuivant" layoutX="105.0" layoutY="530.0" mnemonicParsing="false" onAction="#makeFade" text="Suivant" />
+                  <AnchorPane fx:id="ap1" layoutX="5.0" layoutY="-10.0" prefHeight="465.0" prefWidth="225.0">
+                     <children>
+                        <Label layoutX="15.0" layoutY="35.0" text="Nom" />
+                        <Label layoutX="11.0" layoutY="73.0" text="Adresse" />
+                        <Label layoutX="5.0" layoutY="106.0" text="Jour ouverture" />
+                        <Label layoutX="5.0" layoutY="144.0" text="Jour fermeture" />
+                        <Label layoutX="1.0" layoutY="184.0" text="Heure ouverture" />
+                        <Label layoutX="1.0" layoutY="222.0" text="Heure fermeture" />
+                        <Label layoutX="1.0" layoutY="258.0" text="Email" />
+                        <Label layoutX="5.0" layoutY="296.0" text="N° Telephone" />
+                        <Label layoutX="7.0" layoutY="337.0" text="Fax" />
+                        <Label layoutX="1.0" layoutY="375.0" text="Page Facebook" />
+                        <TextField fx:id="txtNom" layoutX="115.0" layoutY="31.0" />
+                        <TextField fx:id="txtAdresse" layoutX="115.0" layoutY="69.0" />
+                        <TextField fx:id="txtJF" layoutX="115.0" layoutY="140.0" />
+                        <TextField fx:id="txtJO" layoutX="115.0" layoutY="102.0" />
+                        <TextField fx:id="txtHF" layoutX="115.0" layoutY="218.0" />
+                        <TextField fx:id="txtHO" layoutX="115.0" layoutY="180.0" />
+                        <TextField fx:id="txtTel" layoutX="115.0" layoutY="292.0" />
+                        <TextField fx:id="txtEmail" layoutX="115.0" layoutY="254.0" />
+                        <TextField fx:id="txtFb" layoutX="115.0" layoutY="371.0" />
+                        <TextField fx:id="txtFax" layoutX="115.0" layoutY="333.0" />
+                        <TextField fx:id="txtSw" layoutX="114.0" layoutY="409.0" />
+                        <Label layoutY="413.0" text="Site Web" />
+                        <TextField fx:id="txtImage" layoutX="114.0" layoutY="442.0" />
+                        <Label layoutY="446.0" text="Image" />
+                        <ComboBox fx:id="combo" layoutX="115.0" layoutY="480.0" prefWidth="150.0" />
+                        <Label layoutX="11.0" layoutY="484.0" text="Type" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <ListView fx:id="listeEtab" layoutX="333.0" layoutY="38.0" onMouseClicked="#RemplirModifier" prefHeight="339.0" prefWidth="650.0" />
+   </children>   
+</AnchorPane>

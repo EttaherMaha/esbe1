@@ -14,8 +14,8 @@ import java.util.List;
  * @author Ellouze Skander
  */
 public interface ICabinetMedical {
-public void ajouterCabinet(CabinetMedical c,Etablissement e);
+public void ajouterCabinet(CabinetMedical c);
 public void supprimerCabinet(CabinetMedical c);
-public void modifierCabinet(CabinetMedical c,Etablissement e); 
+public void modifierCabinet(CabinetMedical c); 
 
 }

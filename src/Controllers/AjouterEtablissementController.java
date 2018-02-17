@@ -313,35 +313,37 @@ public class AjouterEtablissementController implements Initializable {
         if (combo.getSelectionModel().getSelectedItem() == "Cabinet Medical") {
             CabinetMedicalService cms = new CabinetMedicalService();
 
-            Etablissement e = new Etablissement();
+            CabinetMedical c = new CabinetMedical();
 
-            e.setNom(txtNom.getText());
-            e.setAdresse(txtAdresse.getText());
-            e.setDate_ouverture(txtDO.getText());
-            e.setDate_fermeture(txtDF.getText());
-            e.setEmail(txtEmail.getText());
-            e.setNum(Integer.parseInt(txtNum.getText()));
-            e.setFax(Integer.parseInt(txtFax.getText()));
-            e.setPage_fb(txtFB.getText());
-            e.setSite_web(txtSW.getText());
-            e.setHeure_ouverture(Integer.parseInt(txtHO.getText()));
-            e.setHeure_fermeture(Integer.parseInt(txtHF.getText()));
-            e.setImage(txtImage.getText());
-            e.setIdUser(1);
-            CabinetMedical cm = new CabinetMedical();
+            c.setNom(txtNom.getText());
+            c.setAdresse(txtAdresse.getText());
+            c.setDate_ouverture(txtDO.getText());
+            c.setDate_fermeture(txtDF.getText());
+            c.setEmail(txtEmail.getText());
+            c.setNum(Integer.parseInt(txtNum.getText()));
+            c.setFax(Integer.parseInt(txtFax.getText()));
+            c.setPage_fb(txtFB.getText());
+            c.setSite_web(txtSW.getText());
+            c.setHeure_ouverture(Integer.parseInt(txtHO.getText()));
+            c.setHeure_fermeture(Integer.parseInt(txtHF.getText()));
+            c.setImage(txtImage.getText());
+            c.setIdUser(1);
+            
+            
+            
             if (checkbox1.isSelected()) {
-                cm.setCnam(1);
+                c.setCnam(1);
             } else {
-                cm.setCnam(0);
+                c.setCnam(0);
             }
-            cms.ajouterCabinet(cm, e);
+            cms.ajouterCabinet(c);
         }
         if (combo.getSelectionModel().getSelectedItem() == "Centre de Beaute") {
         }
         if (combo.getSelectionModel().getSelectedItem() == "Herboriseterie") {
             HerbosristerieService hs = new HerbosristerieService();
  
-            Etablissement e = new Etablissement();
+            Herboriseterie e = new Herboriseterie();
 
             e.setNom(txtNom.getText());
             e.setAdresse(txtAdresse.getText());
@@ -356,17 +358,18 @@ public class AjouterEtablissementController implements Initializable {
             e.setHeure_fermeture(Integer.parseInt(txtHF.getText()));
             e.setImage(txtImage.getText());
             e.setIdUser(1);
-            Herboriseterie h = new Herboriseterie();
+            
             if (checkbox1.isSelected()) {
-                h.setLivraison(1);
+                e.setLivraison(1);
             } else {
-                h.setLivraison(0);
+                e.setLivraison(0);
             }
-            hs.ajouterHerbosristerie(h, e);
+            hs.ajouterHerbosristerie(e);
         }
         if (combo.getSelectionModel().getSelectedItem() == "Hopitale") {
             HopitauxService hs = new HopitauxService();
-            Etablissement e = new Etablissement();
+            
+            Hopitaux e = new Hopitaux();
             e.setNom(txtNom.getText());
             e.setAdresse(txtAdresse.getText());
             e.setDate_ouverture(txtDO.getText());
@@ -380,23 +383,23 @@ public class AjouterEtablissementController implements Initializable {
             e.setHeure_fermeture(Integer.parseInt(txtHF.getText()));
             e.setImage(txtImage.getText());
             e.setIdUser(1);
-            Hopitaux h = new Hopitaux();
-            h.setType(combobox1.getSelectionModel().getSelectedItem().toString());
+            
+            e.setType(combobox1.getSelectionModel().getSelectedItem().toString());
             if (checkbox2.isSelected()) {
-                h.setUrgence(1);
+                e.setUrgence(1);
             } else {
-                h.setUrgence(0);
+                e.setUrgence(0);
             }
             if (checkbox3.isSelected()) {
-                h.setCnam(1);
+                e.setCnam(1);
             } else {
-                h.setCnam(0);
+                e.setCnam(0);
             }
-            hs.ajouterHopitaux(h, e);
+            hs.ajouterHopitaux(e);
         }
         if (combo.getSelectionModel().getSelectedItem() == "Laboratoire") {
             LaboratoireService hs = new LaboratoireService();
-            Etablissement e = new Etablissement();
+            Laboratoire e = new Laboratoire();
             e.setNom(txtNom.getText());
             e.setAdresse(txtAdresse.getText());
             e.setDate_ouverture(txtDO.getText());
@@ -410,20 +413,20 @@ public class AjouterEtablissementController implements Initializable {
             e.setHeure_fermeture(Integer.parseInt(txtHF.getText()));
             e.setImage(txtImage.getText());
             e.setIdUser(1);
-            Laboratoire h = new Laboratoire();
+            
             if (checkbox1.isSelected()) {
-                h.setCnam(1);
+                e.setCnam(1);
             } else {
-                h.setCnam(0);
+                e.setCnam(0);
             }
-            h.setNb_equipe(Integer.parseInt(txt2.getText()));
-            h.setType(combobox3.getSelectionModel().getSelectedItem());
-            hs.ajouterHopitaux(h, e);
+            e.setNb_equipe(Integer.parseInt(txt2.getText()));
+            e.setType(combobox3.getSelectionModel().getSelectedItem());
+            hs.ajouterLaboratoire(e);
         }
 
         if (combo.getSelectionModel().getSelectedItem() == "Parapharmacie") {
             ParapharmacieService hs = new ParapharmacieService();
-            Etablissement e = new Etablissement();
+            Parapharmacie e = new Parapharmacie();
             e.setNom(txtNom.getText());
             e.setAdresse(txtAdresse.getText());
             e.setDate_ouverture(txtDO.getText());
@@ -437,17 +440,17 @@ public class AjouterEtablissementController implements Initializable {
             e.setHeure_fermeture(Integer.parseInt(txtHF.getText()));
             e.setImage(txtImage.getText());
             e.setIdUser(1);
-            Parapharmacie h = new Parapharmacie();
+            
             if (checkbox1.isSelected()) {
-                h.setLivraison(1);
+                e.setLivraison(1);
             } else {
-                h.setLivraison(0);
+                e.setLivraison(0);
             }
-            hs.ajouterParapharmacie(h, e);
+            hs.ajouterParapharmacie(e);
         } 
         if (combo.getSelectionModel().getSelectedItem() == "Pharmacie") {
             PharmacieService hs = new PharmacieService();
-            Etablissement e = new Etablissement();
+            Pharmacie e = new Pharmacie();
             e.setNom(txtNom.getText());
             e.setAdresse(txtAdresse.getText());
             e.setDate_ouverture(txtDO.getText());
@@ -461,15 +464,15 @@ public class AjouterEtablissementController implements Initializable {
             e.setHeure_fermeture(Integer.parseInt(txtHF.getText()));
             e.setImage(txtImage.getText());
             e.setIdUser(1);
-            Pharmacie h = new Pharmacie();
             
-                h.setType(combobox4.getSelectionModel().getSelectedItem().toString());
             
-            hs.ajouterPharmacie(h, e);
+                e.setType(combobox4.getSelectionModel().getSelectedItem().toString());
+            
+            hs.ajouterPharmacie(e);
         }
         if (combo.getSelectionModel().getSelectedItem() == "Salle de sport") {
             SalledeSportService hs = new SalledeSportService();
-            Etablissement e = new Etablissement();
+            SalledeSport e = new SalledeSport();
             e.setNom(txtNom.getText());
             e.setAdresse(txtAdresse.getText());
             e.setDate_ouverture(txtDO.getText());
@@ -483,14 +486,15 @@ public class AjouterEtablissementController implements Initializable {
             e.setHeure_fermeture(Integer.parseInt(txtHF.getText()));
             e.setImage(txtImage.getText());
             e.setIdUser(1);
-            SalledeSport h = new SalledeSport();
-            h.setNb_entraineur(Integer.parseInt(txt4.getText()));
             
-            hs.ajouterSalle(h, e);
+            e.setNb_entraineur(Integer.parseInt(txt4.getText()));
+            
+            hs.ajouterSalle(e);
         }
 
         Stage stage = (Stage) btnValider.getScene().getWindow();
         stage.close();
+        
     }
 
     public void modifEtab(ActionEvent event)

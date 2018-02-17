@@ -15,7 +15,7 @@ import Entities.Parapharmacie;
  */
 public interface IParapharmacie {
    
-        public void ajouterParapharmacie(Parapharmacie c,Etablissement e);
+        public void ajouterParapharmacie(Parapharmacie c);
         public void supprimerParapharmacie(Parapharmacie c);
-        public void modifierParapharmacie(Parapharmacie c,Etablissement e); 
+        public void modifierParapharmacie(Parapharmacie c); 
 }

@@ -175,9 +175,9 @@ public class EtablissementController  implements Initializable {
      Date_ouverture.setCellValueFactory(new PropertyValueFactory<>("date_ouverture"));
      Date_fermeture.setCellValueFactory(new PropertyValueFactory<>("date_fermeture"));
      Email.setCellValueFactory(new PropertyValueFactory<>("email"));
-     Num.setCellValueFactory(new PropertyValueFactory<>("numero"));
+     Num.setCellValueFactory(new PropertyValueFactory<>("num"));
      Fax.setCellValueFactory(new PropertyValueFactory<>("fax"));
-     Page_fb.setCellValueFactory(new PropertyValueFactory<>("page_facebook"));
+     Page_fb.setCellValueFactory(new PropertyValueFactory<>("page_fb"));
      Site_web.setCellValueFactory(new PropertyValueFactory<>("site_web"));
      Heure_ouverture.setCellValueFactory(new PropertyValueFactory<>("heure_ouverture"));
      Heure_fermeture.setCellValueFactory(new PropertyValueFactory<>("heure_fermeture"));
@@ -261,12 +261,12 @@ public class EtablissementController  implements Initializable {
                 
             int a=0;
             String sql1,sql2,sql3,sql4,sql5,sql6;
-            sql1="select * from cabinet_medical;";
-            sql2="select * from centre_beaute;";
-            sql3="select * from herboriseterie;";
-            sql4="select * from hopitaux;";
-            sql5="select * from laboratoire;";
-            sql6="select * from parapharmacie;";
+            sql1="select id_etab from cabinet_medical;";
+            sql2="select id_etab from centre_beaute;";
+            sql3="select id_etab from herboriseterie;";
+            sql4="select id_etab from hopitaux;";
+            sql5="select id_etab from laboratoire;";
+            sql6="select id_etab from parapharmacie;";
             
             Statement stl = connexion.createStatement();
             ResultSet  rs1=stl.executeQuery(sql1);
@@ -282,22 +282,22 @@ public class EtablissementController  implements Initializable {
             ResultSet  rs6=st6.executeQuery(sql6);
 
             while(rs1.next())
-            {a =rs1.getInt("id");
+            {a =rs1.getInt("id_etab");
                 if(i==a){return 1;}}
             while(rs2.next())
-            {a =rs2.getInt("id");
+            {a =rs2.getInt("id_etab");
                 if(i==a){return 2;}}
             while(rs3.next())
-            {a =rs3.getInt("id");
+            {a =rs3.getInt("id_etab");
                 if(i==a){return 3;}}
             while(rs4.next())
-            {a =rs4.getInt("id");
+            {a =rs4.getInt("id_etab");
                 if(i==a){return 4;}}
             while(rs5.next())
-            {a =rs5.getInt("id");
+            {a =rs5.getInt("id_etab");
                 if(i==a){return 5;}}
             while(rs6.next())
-            {a =rs6.getInt("id");
+            {a =rs6.getInt("id_etab");
                 if(i==a){return 6;}}
         } catch (SQLException ex) {
         }

@@ -50,6 +50,7 @@ public class AjoutFicheClientController implements Initializable {
         Fiche_ClientService fs= new Fiche_ClientService();
         Fiche_Client f= new Fiche_Client(suivie.getText(),1,35);
         fs.ajouterFicheClient(f);
+        
     }
         
 }

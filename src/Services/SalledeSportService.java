@@ -34,17 +34,16 @@ public class SalledeSportService implements ISalledeSport {
    
     
     @Override
-    public void ajouterSalle(SalledeSport s, Etablissement e) {
+    public void ajouterSalle(SalledeSport c) {
      try {
-        
-              String query1 = "INSERT INTO Etablissements (nom, adresse, date_ouverture, date_fermeture, email, numero,fax,page_facebook,site_web,heure_ouverture,heure_fermeture,image,id_user) "
-                    + "values ( '"+e.getNom()+"','"+e.getAdresse()+"','"+e.getDate_ouverture()+"','"+e.getDate_fermeture()+"','"+e.getEmail()+"',"+e.getNum()+","+e.getFax()+",'"+e.getPage_fb()+"','"+e.getSite_web()+"','"+e.getHeure_ouverture()+"','"+e.getHeure_fermeture()+"','"+e.getImage()+"',1 );";
-                PreparedStatement stl= connexion.prepareStatement(query1, Statement.RETURN_GENERATED_KEYS);
+        String query1 = "INSERT INTO Etablissements (nom, adresse, date_ouverture, date_fermeture, email, numero,fax,page_facebook,site_web,heure_ouverture,heure_fermeture,image,id_user) "
+                    + "values ( '"+c.getNom()+"','"+c.getAdresse()+"','"+c.getDate_ouverture()+"','"+c.getDate_fermeture()+"','"+c.getEmail()+"',"+c.getNum()+","+c.getFax()+",'"+c.getPage_fb()+"','"+c.getSite_web()+"','"+c.getHeure_ouverture()+"','"+c.getHeure_fermeture()+"','"+c.getImage()+"',1 );";
+              PreparedStatement stl= connexion.prepareStatement(query1, Statement.RETURN_GENERATED_KEYS);
             stl.executeUpdate();
               ResultSet  generatedKeys = stl.getGeneratedKeys();
               generatedKeys.next();
-            String query = "INSERT INTO salle_de_sport (id_salle, nb_entraineur) "
-                    + "values ("+generatedKeys.getInt(1)+","+s.getNb_entraineur()+" );";
+            String query = "INSERT INTO salle_de_sport (id_etab, nb_entraineur) "
+                    + "values ("+generatedKeys.getInt(1)+","+c.getNb_entraineur()+" );";
             Statement stm= connexion.createStatement();
             stm.executeUpdate(query);
             System.out.println("Ajout effectué");
@@ -57,11 +56,11 @@ public class SalledeSportService implements ISalledeSport {
     public void supprimerSalle(SalledeSport s) {
 try {
             
-            String sql = "DELETE FROM salle_de_sport WHERE id_salle=?";
+            String sql = "DELETE FROM salle_de_sport WHERE id=?";
             
             PreparedStatement statement = null;
             statement = connexion.prepareStatement(sql);
-            statement.setInt(1, s.getId_salle());
+            statement.setInt(1, s.getId());
             
             int rowsDeleted = 0;
             try {
@@ -82,10 +81,10 @@ try {
     }
 
     @Override
-    public void modifierSalle(SalledeSport s,Etablissement e) {
-        String sql ="UPDATE salle_de_sport SET nb_entraineur ="+s.getNb_entraineur()+" WHERE id_salle ='"+ s.getId_salle()+"';";
-        String sql2="UPDATE etablissements SET nom='"+e.getNom()+"',adresse='"+e.getAdresse()+"',date_ouverture='"+e.getDate_ouverture()+"',date_fermeture='"+e.getDate_fermeture()+"',email='"+e.getEmail()+"',numero="+e.getNum()+",fax="+e.getFax()+",page_facebook='"+e.getPage_fb()+"',site_web='"+e.getPage_fb()+"',heure_ouverture="+e.getHeure_ouverture()+",heure_fermeture="+e.getHeure_fermeture()+",image='"+e.getImage()+"' where id=='"+ s.getId_salle()+"';";
-        try {
+    public void modifierSalle(SalledeSport c) {
+        String sql ="UPDATE salle_de_sport SET nb_entraineur ="+c.getNb_entraineur()+" WHERE id ='"+ c.getId()+"';";
+        String sql2="UPDATE etablissements SET nom='"+c.getNom()+"',adresse='"+c.getAdresse()+"',date_ouverture='"+c.getDate_ouverture()+"',date_fermeture='"+c.getDate_fermeture()+"',email='"+c.getEmail()+"',numero="+c.getNum()+",fax="+c.getFax()+",page_facebook='"+c.getPage_fb()+"',site_web='"+c.getPage_fb()+"',heure_ouverture="+c.getHeure_ouverture()+",heure_fermeture="+c.getHeure_fermeture()+",image='"+c.getImage()+"' where id='"+ c.getId_etab()+"';";
+         try {
             Statement st2=connexion.createStatement();
             Statement stl = connexion.createStatement(); 
             stl.executeUpdate(sql);

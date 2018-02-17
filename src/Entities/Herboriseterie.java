@@ -10,26 +10,33 @@ package Entities;
  * @author Ellouze Skander
  */
 public class Herboriseterie extends Etablissement {
- 
-    private int id_herbo;
+    private int id;
+    private int id_etab;
     private int livraison;
 
-
-    public Herboriseterie(int id_herbo, int livraison) {
-        this.id_herbo = id_herbo;
-        this.livraison = livraison;
-
-    }
-
     public Herboriseterie() {
+
     }
 
-    public int getId_herbo() {
-        return id_herbo;
+    public Herboriseterie(int id_etab, int livraison, String nom, String adresse, String date_ouverture, String date_fermeture, String email, int num, int fax, String page_fb, String site_web, int heure_ouverture, int heure_fermeture, String image, int idUser) {
+        super(nom, adresse, date_ouverture, date_fermeture, email, num, fax, page_fb, site_web, heure_ouverture, heure_fermeture, image, idUser);
+        this.id_etab = id_etab;
+        this.livraison = livraison;
     }
 
-    public void setId_herbo(int id_herbo) {
-        this.id_herbo = id_herbo;
+    public int getId_etab() {
+        return id_etab;
+    }
+        public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setId_etab(int id_etab) {
+        this.id_etab = id_etab;
     }
 
     public int getLivraison() {
@@ -37,15 +44,10 @@ public class Herboriseterie extends Etablissement {
     }
 
     public void setLivraison(int livraison) {
-        this.livraison = livraison; 
+        this.livraison = livraison;
     }
 
-
-
-    @Override
-    public String toString() {
-        return "Herboriseterie{" + "id_herbo=" + id_herbo + ", livraison=" + livraison + '}';
-    }
     
-    
+
+  
 }

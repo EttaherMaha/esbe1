@@ -19,7 +19,7 @@ import esbe.Esbe;
  */
 public class MyDB {
      Connection connexion;
-    final  String url = "jdbc:mysql://localhost:3306/esbe";
+    final  String url = "jdbc:mysql://localhost:3306/basepi";
     final  String user = "root";
     final  String password = "";
     private static MyDB instance=null;

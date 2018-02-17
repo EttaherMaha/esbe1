@@ -9,23 +9,34 @@ package Entities;
  *
  * @author anis
  */
-public class SalledeSport {
-    private int id_salle;
+public class SalledeSport extends Etablissement {
+    private int id;
+    private int id_etab;
     private int nb_entraineur;
 
-    public SalledeSport(int nb_entraineur) {
+    public SalledeSport() {
+    }
+
+    public SalledeSport(int id_etab, int nb_entraineur, String nom, String adresse, String date_ouverture, String date_fermeture, String email, int num, int fax, String page_fb, String site_web, int heure_ouverture, int heure_fermeture, String image, int idUser) {
+        super(nom, adresse, date_ouverture, date_fermeture, email, num, fax, page_fb, site_web, heure_ouverture, heure_fermeture, image, idUser);
+        this.id_etab = id_etab;
         this.nb_entraineur = nb_entraineur;
     }
 
-    public SalledeSport() { 
+        public int getId() {
+        return id;
     }
 
-    public int getId_salle() {
-        return id_salle;
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    public int getId_etab() {
+        return id_etab;
     }
 
-    public void setId_salle(int id_salle) {
-        this.id_salle = id_salle;
+    public void setId_etab(int id_etab) {
+        this.id_etab = id_etab;
     }
 
     public int getNb_entraineur() {
@@ -36,11 +47,5 @@ public class SalledeSport {
         this.nb_entraineur = nb_entraineur;
     }
 
-    @Override
-    public String toString() {
-        return "SalledeSport{" + "id_salle=" + id_salle + ", nb_entraineur=" + nb_entraineur + '}';
-    }
-    
-    
-    
+   
 }

@@ -32,17 +32,17 @@ public class ParapharmacieService implements IParapharmacie {
     }
     
     @Override
-    public void ajouterParapharmacie(Parapharmacie c, Etablissement e) {
+    public void ajouterParapharmacie(Parapharmacie c) {
     
           try { 
 
-         String query1 = "INSERT INTO Etablissements (nom, adresse, date_ouverture, date_fermeture, email, numero,fax,page_facebook,site_web,heure_ouverture,heure_fermeture,image,id_user) "
-                    + "values ( '"+e.getNom()+"','"+e.getAdresse()+"','"+e.getDate_ouverture()+"','"+e.getDate_fermeture()+"','"+e.getEmail()+"',"+e.getNum()+","+e.getFax()+",'"+e.getPage_fb()+"','"+e.getSite_web()+"','"+e.getHeure_ouverture()+"','"+e.getHeure_fermeture()+"','"+e.getImage()+"',1 );";
-                PreparedStatement stl= connexion.prepareStatement(query1, Statement.RETURN_GENERATED_KEYS);
+        String query1 = "INSERT INTO Etablissements (nom, adresse, date_ouverture, date_fermeture, email, numero,fax,page_facebook,site_web,heure_ouverture,heure_fermeture,image,id_user) "
+                    + "values ( '"+c.getNom()+"','"+c.getAdresse()+"','"+c.getDate_ouverture()+"','"+c.getDate_fermeture()+"','"+c.getEmail()+"',"+c.getNum()+","+c.getFax()+",'"+c.getPage_fb()+"','"+c.getSite_web()+"','"+c.getHeure_ouverture()+"','"+c.getHeure_fermeture()+"','"+c.getImage()+"',1 );";
+              PreparedStatement stl= connexion.prepareStatement(query1, Statement.RETURN_GENERATED_KEYS);
             stl.executeUpdate();
               ResultSet  generatedKeys = stl.getGeneratedKeys();
               generatedKeys.next();
-            String query = "INSERT INTO parapharmacie (livraison,id_para) "
+            String query = "INSERT INTO parapharmacie (livraison,id_etab) "
                     + "values ("+c.getLivraison()+","+generatedKeys.getInt(1)+" );";
             Statement stm= connexion.createStatement();
             stm.executeUpdate(query);
@@ -58,11 +58,11 @@ public class ParapharmacieService implements IParapharmacie {
     
          try {
             
-            String sql = "DELETE FROM parapharmacie WHERE id_para=?";
+            String sql = "DELETE FROM parapharmacie WHERE id=?";
             
             PreparedStatement statement = null;
             statement = connexion.prepareStatement(sql);
-            statement.setInt(1, c.getId_para());
+            statement.setInt(1, c.getId());
             
             int rowsDeleted = 0;
        
@@ -78,11 +78,11 @@ public class ParapharmacieService implements IParapharmacie {
     }
 
     @Override
-    public void modifierParapharmacie(Parapharmacie c,Etablissement e) {
+    public void modifierParapharmacie(Parapharmacie c) {
     
-          String sql ="UPDATE parapharmacie SET livraison ="+c.getLivraison()+" WHERE id_para ="+ c.getId_para()+";";
-       String sql2="UPDATE etablissements SET nom='"+e.getNom()+"',adresse='"+e.getAdresse()+"',date_ouverture='"+e.getDate_ouverture()+"',date_fermeture='"+e.getDate_fermeture()+"',email='"+e.getEmail()+"',numero="+e.getNum()+",fax="+e.getFax()+",page_facebook='"+e.getPage_fb()+"',site_web='"+e.getPage_fb()+"',heure_ouverture="+e.getHeure_ouverture()+",heure_fermeture="+e.getHeure_fermeture()+",image='"+e.getImage()+"' where id="+c.getId_para()+";";
-        try {
+          String sql ="UPDATE parapharmacie SET livraison ="+c.getLivraison()+" WHERE id ="+ c.getId()+";";
+        String sql2="UPDATE etablissements SET nom='"+c.getNom()+"',adresse='"+c.getAdresse()+"',date_ouverture='"+c.getDate_ouverture()+"',date_fermeture='"+c.getDate_fermeture()+"',email='"+c.getEmail()+"',numero="+c.getNum()+",fax="+c.getFax()+",page_facebook='"+c.getPage_fb()+"',site_web='"+c.getPage_fb()+"',heure_ouverture="+c.getHeure_ouverture()+",heure_fermeture="+c.getHeure_fermeture()+",image='"+c.getImage()+"' where id='"+ c.getId_etab()+"';";
+         try {
             Statement st2=connexion.createStatement();
             Statement stl = connexion.createStatement();
             stl.executeUpdate(sql);
